@@ -4,7 +4,54 @@ Some coding problems to practice & review for interviews
 # Navigation
 - [Template](#template)
 - Search and Sort
-  1. [BubbleSort](#bubble-sort)
+    1. [BubbleSort](#bubble-sort)
+    2. InsertionSort
+    3. MergeSort
+    4. QuickSort
+    5. RadixSort
+    6. BucketSort
+    7. BinarySearch
+- String
+    1. IsPalindrome
+    2. IsAnagram
+    3. RemoveAllChars
+    4. FindFirstNonRepeatedChar
+    5. CountChar
+    6. RemoveDupChar
+    7. MostFrequentChar
+    8. AllPermutations
+    9. LongestSubPalindrome
+    10. LongestCommonSubsequence
+- Array
+    1. FindMissing
+    2. FindDuplicate
+    3. FindSecondMax
+    4. PairSum
+    5. SubsetSum
+    6. ReverseInPlace
+    7. Partition
+- LinkedList
+    1. MiddleElementSinglePass
+    2. NthFromLast
+    3. ReverseSinglyLinkedList
+    4. MergeTwoSortedLists
+    5. RemoveDuplicate
+- Graph and Tree
+    1. FindDepth
+    2. InOrderTraversal
+    3. PreOrderTraversal
+    4. PostOrderTraversal
+    5. BalanceCheck
+    6. ShortestPath
+    7. HamiltonPath
+- Number and Math
+    1. IsPowerOfTwo
+    2. FindPrimeGivenUpperBound
+    3. BinaryConversion
+    4. SumOfDigits
+    5. PrimeFactorization
+    6. SieveOfEratosthenes
+    7. MaxPointsOnLine
 
 # Problems
 

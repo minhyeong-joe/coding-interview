@@ -2,10 +2,9 @@
 Some coding problems to practice & review for interviews
 
 # Navigation
-- [Template](#template)
 - Search and Sort
     1. [BubbleSort](#bubble-sort)
-    2. InsertionSort
+    2. [InsertionSort](#insertion-sort)
     3. MergeSort
     4. QuickSort
     5. RadixSort
@@ -54,19 +53,6 @@ Some coding problems to practice & review for interviews
     7. MaxPointsOnLine
 
 # Problems
-
-- ## Template
-
-- ### Problem Statement
-    Simple description of and possibly a link to the original problem
-
-- ### Solution
-
-  - #### Path to the source codes that solve the problem
-
-  - #### If applicable, What is time complexity of the solution? (Big-O)
-  
----
   
 - ## Bubble Sort
 
@@ -85,6 +71,27 @@ The pass through the list is repeated until the list is sorted.
     O(N^2).
 
     Maximum N-1 iterations, and in each iteration, algorithm scans each of N elements.
+
+---
+  
+- ## Insertion Sort
+
+- ### Problem Statement
+    Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. 
+At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
+
+- ### Solution
+
+  - #### Path to the source codes that solve the problem
+  
+    [insertionSort.java](./SearchSort/insertionSort/insertionSort.java)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+  
+    O(N^2).
+
+    Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
+to decide i-th element's new order. (More "shifts" required for worst case)
 
 ---
 

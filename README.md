@@ -5,7 +5,7 @@ Some coding problems to practice & review for interviews
 - Search and Sort
     1. [BubbleSort](#bubble-sort)
     2. [InsertionSort](#insertion-sort)
-    3. MergeSort
+    3. [MergeSort](#merge-sort)
     4. QuickSort
     5. RadixSort
     6. BucketSort
@@ -94,4 +94,27 @@ At each iteration, insertion sort removes one element from the input data, finds
 to decide i-th element's new order. (More "shifts" required for worst case)
 
 ---
+  
+- ## Merge Sort
+
+- ### Problem Statement
+    Conceptually, a merge sort works as follows:
+1. Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
+2. Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
+
+- ### Solution
+
+  - #### Path to the source codes that solve the problem
+  
+    [mergeSort.py](./SearchSort/mergeSort/mergeSort.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+  
+    O(N log N).
+
+    Similar to binary operations (divide-and-conquer), each split/merge divides the problem
+into subproblems of half the size. It takes log N divisions and in each subproblem, N time to sort.
+
+---
+
 

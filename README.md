@@ -53,48 +53,48 @@ Some coding problems to practice & review for interviews
     7. MaxPointsOnLine
 
 # Problems
-  
+
 - ## Bubble Sort
 
 - ### Problem Statement
-    Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. 
+    Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
 The pass through the list is repeated until the list is sorted.
 
 - ### Solution
 
   - #### Path to the source codes that solve the problem
-  
+
     [bubbleSort.cpp](./SearchSort/bubbleSort/bubbleSort.cpp)
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
-  
+
     O(N^2).
 
     Maximum N-1 iterations, and in each iteration, algorithm scans each of N elements.
 
 ---
-  
+
 - ## Insertion Sort
 
 - ### Problem Statement
-    Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. 
+    Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.
 At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
 
 - ### Solution
 
   - #### Path to the source codes that solve the problem
-  
+
     [insertionSort.java](./SearchSort/insertionSort/insertionSort.java)
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
-  
+
     O(N^2).
 
     Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
 to decide i-th element's new order. (More "shifts" required for worst case)
 
 ---
-  
+
 - ## Merge Sort
 
 - ### Problem Statement
@@ -105,11 +105,11 @@ to decide i-th element's new order. (More "shifts" required for worst case)
 - ### Solution
 
   - #### Path to the source codes that solve the problem
-  
+
     [mergeSort.py](./SearchSort/mergeSort/mergeSort.py)
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
-  
+
     O(N log N).
 
     Similar to binary operations (divide-and-conquer), each split/merge divides the problem
@@ -117,4 +117,26 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 ---
 
+- ## Quick Sort
 
+- ### Problem Statement
+  Quicksort is a divide-and-conquer algorithm.
+  It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
+  The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting.
+
+- ### Solution
+
+- #### Path to the source codes that solve the problem
+
+  [quickSort.java](./SearchSort/quickSort/quickSort.java)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N log N).
+
+  partitions array into sub-arrays and then place them in the right place of the pivot.
+  The solution used **Hoarse Partition Scheme** (pivot in the middle and two "pointers" from two ends of array)
+  So even for sorted array, the worst case is still O(n log n).
+  **Lomuto Partition Scheme** (pivot at the end, and comparison "pointer" from start of index) can be O(n^2) on already sorted list.
+
+---

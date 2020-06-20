@@ -6,7 +6,7 @@ Some coding problems to practice & review for interviews
     1. [BubbleSort](#bubble-sort)
     2. [InsertionSort](#insertion-sort)
     3. [MergeSort](#merge-sort)
-    4. QuickSort
+    4. [QuickSort](#quick-sort)
     5. RadixSort
     6. BucketSort
     7. BinarySearch

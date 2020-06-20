@@ -7,7 +7,7 @@ Some coding problems to practice & review for interviews
     2. [InsertionSort](#insertion-sort)
     3. [MergeSort](#merge-sort)
     4. [QuickSort](#quick-sort)
-    5. RadixSort
+    5. [RadixSort (and counting sort)](#radix-sort)
     6. BucketSort
     7. BinarySearch
 - String
@@ -138,5 +138,42 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   The solution used **Hoarse Partition Scheme** (pivot in the middle and two "pointers" from two ends of array)
   So even for sorted array, the worst case is still O(n log n).
   **Lomuto Partition Scheme** (pivot at the end, and comparison "pointer" from start of index) can be O(n^2) on already sorted list.
+
+---
+
+- ## Radix Sort
+
+- ### Problem Statement
+  Radix sort sorts digit by digit.
+  Starting with least significant digit, algorithm uses counting sort as subroutine to sort the list.
+  For example, for 3-digit integers, counting sort is called three times.
+
+  **Counting Sort**
+
+  Counting sort uses counting array to sort elements. (details in source code)
+
+- ### Solution
+
+- #### Path to the source codes that solve the problem
+
+  [countingSort.py](./SearchSort/radixSort/countingSort.py)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  Counting Sort takes O(N+k) time.
+
+  Given list of N elements, k is the largest element.
+
+  1. Iterate over N elements to count and store occurrences => O(N)
+  2. Iterate over k elements of counting array to modify for sorting => O(k)
+  3. Iterate over N elements of original array from the end => O(N)
+
+  Radix Sort takes O(d(N+k)) time.
+
+  d is the largest number of digit.
+
+  With X being the largest number with base-10,
+
+  d = floor((log_10)X) + 1  
 
 ---

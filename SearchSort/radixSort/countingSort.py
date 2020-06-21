@@ -12,15 +12,17 @@
 # efficient for k not significantly greater than N. ie) single digits (as k is 10 at most)
 
 # generally can be used for different base system,
-# but this one is for base-10 only
-def countingSort(arr):
+# but this one is for base-10 and single digit only (specifically as radix sort's subroutine)
+def countingSort(arr, digit):
+    print(arr)
 
     counting = [0] * 10
     sorted = [0] * len(arr)
 
     # count N elements in list
     for i in range(0, len(arr)):
-        counting[arr[i]] += 1
+        countingIndex = arr[i]//10**digit - (arr[i]//10**(digit+1))*10
+        counting[countingIndex] += 1
 
     print("Counting Array:")
     print(counting)
@@ -36,8 +38,9 @@ def countingSort(arr):
     # insert into sorted
     for i in range(len(arr)-1, -1, -1):
         print("=== %d ===" %arr[i])
-        counting[arr[i]] -= 1
-        sorted[counting[arr[i]]] = arr[i]
+        countingIndex = arr[i]//10**digit - (arr[i]//10**(digit+1))*10
+        counting[countingIndex] -= 1
+        sorted[counting[countingIndex]] = arr[i]
         print("Counting array: ", counting)
         print("Sorted array: ", sorted)
 
@@ -51,7 +54,7 @@ def main():
     print(testArr)
     print()
 
-    sortedArr = countingSort(testArr)
+    sortedArr = countingSort(testArr, 0)
 
     print()
     print("Sorted list:")

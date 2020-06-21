@@ -194,6 +194,14 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
 
-  
+  O(N) to iterate over original list,
+
+  and for each N items, find the correct position to be inserted (take O(k), k is the number of items in the bin)
+
+  This can differ depending on which sorting to use for each bucket.
+
+  In worst case, if all items fall into the same bin, can take O(N^2)
+
+  If all items are evenly distributed, then it can take O(N) time as no sorting within bucket required.
 
 ---

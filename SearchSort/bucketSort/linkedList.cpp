@@ -3,7 +3,14 @@ Simple linked list implemented specifically for bucket sort
 */
 
 #include <string>
+#include <exception>
 using namespace std;
+
+struct EmptyListException: public exception {
+  const char* what() const throw() {
+    return "list is empty";
+  }
+};
 
 template <class T>
 struct Node {
@@ -86,6 +93,19 @@ public:
     return pos;
   }
 
+  // pop out the list element from the beginning
+  T pop() {
+    Node<T>* temp = head;
+    if (temp != nullptr) {
+      head = head->next;
+      T val = temp->value;
+      delete temp;
+      temp = NULL;
+      return val;
+    }
+    throw new EmptyListException;
+  }
+
   int size() {
     int size = 0;
     Node<T>* counter = head;
@@ -101,6 +121,7 @@ public:
     Node<T>* curPtr = head;
     while (curPtr != nullptr) {
       output.append(to_string(curPtr->value));
+      output.append(" ");
       curPtr = curPtr->next;
     }
     return output;

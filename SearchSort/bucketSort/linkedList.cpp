@@ -72,6 +72,20 @@ public:
     }
   }
 
+  // returns the position of the first larger element
+  int firstLarger(T target) {
+    Node<T>* curPtr = head;
+    int pos = 0;
+    while (curPtr != nullptr) {
+      if (curPtr->value >= target) {
+        return pos;
+      }
+      curPtr = curPtr->next;
+      pos++;
+    }
+    return pos;
+  }
+
   int size() {
     int size = 0;
     Node<T>* counter = head;

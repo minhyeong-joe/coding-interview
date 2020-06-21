@@ -13,10 +13,10 @@ using namespace std;
 // Driver
 int main() {
   LinkedList<int> list;
-  list.insert(3);
-  list.insert(5);
-  list.insert(2);
-  list.insert(7, 0);
-  cout << list.toString();
+  list.insert(3, list.firstLarger(3));
+  list.insert(5, list.firstLarger(5));
+  list.insert(2, list.firstLarger(2));
+  list.insert(7, list.firstLarger(7));
+  cout << list.toString() << endl;
   return 0;
 }

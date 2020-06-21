@@ -8,7 +8,7 @@ Some coding problems to practice & review for interviews
     3. [MergeSort](#merge-sort)
     4. [QuickSort](#quick-sort)
     5. [RadixSort (and counting sort)](#radix-sort)
-    6. BucketSort
+    6. [BucketSort](#bucket-sort)
     7. BinarySearch
 - String
     1. IsPalindrome
@@ -176,5 +176,24 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   With X being the largest number with base-10,
 
   d = floor((log_10)X) + 1  
+
+---
+
+- ## Bucket Sort
+
+- ### Problem Statement
+  Bucket Sort first places input elements into corresponding bins,
+  then sort the bins separately, and lastly concatenate all the bins as a single sorted list.
+
+- ### Solution
+
+- #### Path to the source codes that solve the problem
+
+  [linkedList.cpp](./SearchSort/bucketSort/linkedList.cpp)
+  [bucketSort.cpp](./SearchSort/bucketSort/bucketSort.cpp)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  
 
 ---

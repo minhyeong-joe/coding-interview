@@ -1,3 +1,4 @@
+package SearchSort.quickSort;
 /**
 Implement Quick Sort
 Quick sort uses a pivot to move smaller elements to its left and larger elements to its right.
@@ -5,7 +6,6 @@ Recursively doing so on left side of pivot and right side of pivot.
 This divide-and-conquer technique takes O(n log n) time.
 Unlike the MergeSort, QuickSort is an in-place sorting algorithm.
 */
-import java.lang.*;
 import java.util.*;
 
 public class quickSort {
@@ -20,20 +20,20 @@ public class quickSort {
       System.out.println(Arrays.toString(testArr));
       System.out.println();
 
-      quickSort(testArr, 0, testArr.length-1);
+      sort(testArr, 0, testArr.length-1);
 
       System.out.println("\nSorted Array:");
       System.out.println(Arrays.toString(testArr));
   }
 
-  public static void quickSort(int[] arr, int left, int right) {
+  public static void sort(int[] arr, int left, int right) {
     if (right > left) {
       // System.out.println(Arrays.toString(Arrays.copyOfRange(arr, left, right)));
 
       int pivotIndex = partition(arr, left, right);
 
-      quickSort(arr, left, pivotIndex);
-      quickSort(arr, pivotIndex+1, right);
+      sort(arr, left, pivotIndex);
+      sort(arr, pivotIndex+1, right);
 
     }
   }

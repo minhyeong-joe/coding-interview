@@ -1,3 +1,5 @@
+package SearchSort.insertionSort;
+
 /*
 Implement Insertion Sort
 */
@@ -12,7 +14,7 @@ public class insertionSort {
 		printArray(testArr);
 		System.out.println();
 
-		insertionSort(testArr);
+		sort(testArr);
 
 		System.out.println("\nSorted Array:");
 		printArray(testArr);
@@ -26,7 +28,7 @@ public class insertionSort {
 		System.out.println("]");
 	}
 
-	public static void insertionSort(int[] arr) {
+	public static void sort(int[] arr) {
 		for (int i = 1; i < arr.length; i++) {
 			System.out.printf("Iteration %d\n", i);
 			int temp = arr[i];

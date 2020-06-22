@@ -9,7 +9,7 @@ Some coding problems to practice & review for interviews
     4. [QuickSort](#quick-sort)
     5. [RadixSort (and counting sort)](#radix-sort)
     6. [BucketSort](#bucket-sort)
-    7. BinarySearch
+    7. [BinarySearch](#binary-search)
 - String
     1. IsPalindrome
     2. IsAnagram
@@ -187,6 +187,8 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - ### Solution
 
+  Used linked list to store elements within the same bin.
+
 - #### Path to the source codes that solve the problem
 
   [linkedList.cpp](./SearchSort/bucketSort/linkedList.cpp)
@@ -203,5 +205,37 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   In worst case, if all items fall into the same bin, can take O(N^2)
 
   If all items are evenly distributed, then it can take O(N) time as no sorting within bucket required.
+
+---
+
+- ## Binary Search
+
+- ### Problem Statement
+  Binary Search utilizes **Sorted** list to search for a target within the given list.
+
+- ### Solution
+
+  It compares middle value to target value, and do the following:
+    1. if target == middle, return middle
+    2. if target > middle, do recursive search on right of middle
+    3. if target < middle, do recursive search on left of middle
+    4. if sub-array is not valid (ie. left-end and right-end crossed path), then element is not found, thus return -1 as flag.
+
+- #### Path to the source codes that solve the problem
+
+  **Any sort is fine, but used quickSort for the solution**
+
+  [binarySearch.java](./SearchSort/binarySearch/binarySearch.java)
+  [quickSort.java](./SearchSort/quickSort/quickSort.java)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  Excluding quick sort described [above](#quick-sort),
+
+  O(log n)
+
+  Because this is simply divide-and-conquer, each recursion keeps "half-ing" the problem. For N elements, it takes at most log N + 1 recursive calls including the very first call from main.
+
+  In each recursion, it simply compares the values and return index, so this is O(1), thus total time complexity is O(log N) 
 
 ---

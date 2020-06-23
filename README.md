@@ -11,7 +11,7 @@ Some coding problems to practice & review for interviews
     6. [BucketSort](#bucket-sort)
     7. [BinarySearch](#binary-search)
 - String
-    1. IsPalindrome
+    1. [IsPalindrome](#is-palindrome)
     2. IsAnagram
     3. RemoveAllChars
     4. FindFirstNonRepeatedChar
@@ -237,5 +237,34 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   Because this is simply divide-and-conquer, each recursion keeps "half-ing" the problem. For N elements, it takes at most log N + 1 recursive calls including the very first call from main.
 
   In each recursion, it simply compares the values and return index, so this is O(1), thus total time complexity is O(log N) 
+
+---
+
+- ## Is Palindrome
+
+- ### Problem Statement
+  A palindrome is a word, phrase, number or sequence of words that reads the same backward as forward.
+
+  ie) racecar, level, noon, rotator...
+
+  Write a program to detect if input string is a palindrome.
+
+- ### Solution
+
+  Use stack to store first half of the string, then pop from stack as they match the last half of the string. If non-matching found or if stack has remainders, then the string is not palindrome.
+
+  Careful with even and odd length input.
+
+- #### Path to the source codes that solve the problem
+
+  **Any sort is fine, but used quickSort for the solution**
+
+  [isPalindrome.py](./String/isPalindrome.py)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N)
+
+  Scans the input string of length N single time.
 
 ---

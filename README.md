@@ -265,8 +265,6 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - #### Path to the source codes that solve the problem
 
-  **Any sort is fine, but used quickSort for the solution**
-
   [isPalindrome.py](./String/isPalindrome.py)
 
 - #### If applicable, What is time complexity of the solution? (Big-O)

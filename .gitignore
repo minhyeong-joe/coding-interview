@@ -1,5 +1,6 @@
 # IDE
 .vs/*
+.vscode/*
 
 # Executables
 *.exe

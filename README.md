@@ -12,7 +12,7 @@ Some coding problems to practice & review for interviews
     7. [BinarySearch](#binary-search)
 - String
     1. [IsPalindrome](#is-palindrome)
-    2. IsAnagram
+    2. [IsAnagram](#is-anagram)
     3. RemoveAllChars
     4. FindFirstNonRepeatedChar
     5. CountChar
@@ -53,6 +53,9 @@ Some coding problems to practice & review for interviews
     7. MaxPointsOnLine
 
 # Problems
+
+## **Search and Sort**
+---
 
 - ## Bubble Sort
 
@@ -157,6 +160,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - #### Path to the source codes that solve the problem
 
   [countingSort.py](./SearchSort/radixSort/countingSort.py)
+
   [radixSort.py](./SearchSort/radixSort/radixSort.py)
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
@@ -192,6 +196,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - #### Path to the source codes that solve the problem
 
   [linkedList.cpp](./SearchSort/bucketSort/linkedList.cpp)
+
   [bucketSort.cpp](./SearchSort/bucketSort/bucketSort.cpp)
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
@@ -226,6 +231,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   **Any sort is fine, but used quickSort for the solution**
 
   [binarySearch.java](./SearchSort/binarySearch/binarySearch.java)
+
   [quickSort.java](./SearchSort/quickSort/quickSort.java)
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
@@ -238,6 +244,8 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   In each recursion, it simply compares the values and return index, so this is O(1), thus total time complexity is O(log N) 
 
+---
+## **String**
 ---
 
 - ## Is Palindrome
@@ -267,4 +275,42 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   Scans the input string of length N single time.
 
+---
+
+- ## Is Anagram
+
+- ### Problem Statement
+  An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+  Write a program to detect if a string is an anagram of another input string.
+
+- ### Solution
+
+  **naive approach**: for each char of string A, scans through string B and mark it. Do until all chars of string A are scanned or entire string B is marked. Return true iff both string A and string B are done.
+
+  **improved approach**: Use a frequency dictionary to first count the occurrences of chars in string A, then match freq dict to string B to see if all chars occur with same frequency.
+
+- #### Path to the source codes that solve the problem
+
+  **naive approach**: [isAnagram.py](./String/isAnagram.py)
+
+  **improved approach**: [isAnagram.cpp](./String/isAnagram.cpp)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  **naive approach**: O(N*M), O(N^2)
+
+  N is the length of input string A, and M is the length of input string B.
+
+  For checking anagram, it is highly likely that N and M are equal.
+
+  For each letter in string A, scan through string B, so it is O(N^2)
+
+  **improved approach**: O(N)
+
+  scans through string A of length N, count the occurrences.
+
+  Then scans through string B of length M to match the occurrences.
+
+  Total time complexity is O(max(N,M))
 ---

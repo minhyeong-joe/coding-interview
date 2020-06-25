@@ -13,7 +13,7 @@ Some coding problems to practice & review for interviews
 - String
     1. [IsPalindrome](#is-palindrome)
     2. [IsAnagram](#is-anagram)
-    3. RemoveAllChars
+    3. [RemoveAllChars](#remove-all-chars)
     4. FindFirstNonRepeatedChar
     5. CountChar
     6. RemoveDupChar
@@ -313,4 +313,36 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   Then scans through string B of length M to match the occurrences.
 
   Total time complexity is O(max(N,M))
+---
+
+- ## Remove All Chars
+
+- ### Problem Statement
+  Given a string and an array of characters, remove all occurrences of characters in array from the string. (case-insensitive)
+
+  (Obviously, without using built-in string methods like substring, removeAll, etc)
+
+  Example:
+  ```java
+  str = removeAllChars("Hello, World", ['h', 'l']);
+  print(str);
+  // should output:
+  // eo, Word
+  ```
+
+- ### Solution
+
+  For each char in string, check to see if it is in the array,
+
+  If not then add that char to resulting string.
+
+- #### Path to the source codes that solve the problem
+
+  [RemoveAllChars.java](./String/RemoveAllChars.java)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N * M)
+
+  given string of length N and array of length M.
 ---

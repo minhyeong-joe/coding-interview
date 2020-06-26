@@ -14,7 +14,7 @@ Some coding problems to practice & review for interviews
     1. [IsPalindrome](#is-palindrome)
     2. [IsAnagram](#is-anagram)
     3. [RemoveAllChars](#remove-all-chars)
-    4. FindFirstNonRepeatedChar
+    4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
     5. CountChar
     6. RemoveDupChar
     7. MostFrequentChar
@@ -50,7 +50,6 @@ Some coding problems to practice & review for interviews
     4. SumOfDigits
     5. PrimeFactorization
     6. SieveOfEratosthenes
-    7. MaxPointsOnLine
 
 # Problems
 
@@ -343,4 +342,45 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   O(N * M)
 
   given string of length N and array of length M.
+---
+
+- ## Find First Non-repeated Char
+
+- ### Problem Statement
+  Given a string find the first character that does not repeat (AKA, appears only once in the string). (Case-sensitive)
+
+  **Extension**:
+
+  find **ALL** non-repeating characters in the string
+
+  Example:
+  ```java
+  ch = findFirstNoneRepeatedChar("abacdeac")
+  print(ch);
+  // should output:
+  // b
+  // as 'd' and 'e' are not repeating, but not the first.
+
+  // Extension
+  arr = findAllNonRepeatedChar("abacdeac")
+  print(arr)
+  // should output:
+  // [b, d, e]  (or any sort of array printing format depend on language)
+  ```
+
+- ### Solution
+
+  Iterate over characters in string, and keep track of occurrences using dictionary.
+
+  Once done iterating string, return the first dict key that has occurrence of 1.
+
+- #### Path to the source codes that solve the problem
+
+  [FindNonRepeatedChar.py](./String/FindNonRepeatedChar.py)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N)
+
+  N = length of input string.
 ---

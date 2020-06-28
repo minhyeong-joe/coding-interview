@@ -15,12 +15,11 @@ Some coding problems to practice & review for interviews
     2. [IsAnagram](#is-anagram)
     3. [RemoveAllChars](#remove-all-chars)
     4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
-    5. CountChar
-    6. RemoveDupChar
-    7. MostFrequentChar
-    8. AllPermutations
-    9. LongestSubPalindrome
-    10. LongestCommonSubsequence
+    5. [RemoveDupChar](#remove-duplicate-char)
+    6. MostFrequentChar
+    7. AllPermutations
+    8. LongestSubPalindrome
+    9. LongestCommonSubsequence
 - Array
     1. FindMissing
     2. FindDuplicate
@@ -377,6 +376,36 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - #### Path to the source codes that solve the problem
 
   [FindNonRepeatedChar.py](./String/FindNonRepeatedChar.py)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N)
+
+  N = length of input string.
+---
+
+- ## Remove Duplicate Char
+
+- ### Problem Statement
+  Given a string, remove all the duplicate characters (case-sensitive).
+
+  Example:
+  ```java
+  str = removeDupChar("Hello World")
+  print(str);
+  // should output:
+  // He Wrd
+  ```
+
+- ### Solution
+
+  Iterate over characters in string, and keep track of occurrences using dictionary.
+
+  Once done iterating string, concatenate all the dict key with freq of 1 into a string.
+
+- #### Path to the source codes that solve the problem
+
+  [RemoveDupChar](./String/RemoveDupChar.java)
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
 

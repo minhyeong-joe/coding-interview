@@ -16,7 +16,7 @@ Some coding problems to practice & review for interviews
     3. [RemoveAllChars](#remove-all-chars)
     4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
     5. [RemoveDupChar](#remove-duplicate-char)
-    6. [MostFrequentChar](#most-frequenct-char)
+    6. [MostFrequentChar](#most-frequent-char)
     7. AllPermutations
     8. LongestSubPalindrome
     9. LongestCommonSubsequence

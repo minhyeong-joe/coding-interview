@@ -16,7 +16,7 @@ Some coding problems to practice & review for interviews
     3. [RemoveAllChars](#remove-all-chars)
     4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
     5. [RemoveDupChar](#remove-duplicate-char)
-    6. MostFrequentChar
+    6. [MostFrequentChar](#most-frequenct-char)
     7. AllPermutations
     8. LongestSubPalindrome
     9. LongestCommonSubsequence
@@ -405,7 +405,37 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - #### Path to the source codes that solve the problem
 
-  [RemoveDupChar](./String/RemoveDupChar.java)
+  [RemoveDupChar.java](./String/RemoveDupChar.java)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N)
+
+  N = length of input string.
+---
+
+- ## Most Frequent Char
+
+- ### Problem Statement
+  Given a string, find the most frequent character (return any if multiple, case-sensitive)
+
+  Example:
+  ```java
+  ch = mostFrequentChar("Hello World")
+  print(ch);
+  // should output:
+  // l
+  ```
+
+- ### Solution
+
+  Iterate over characters in string, and keep track of occurrences using dictionary.
+
+  Once done iterating string, find max frequency in the dictionary and return the key char associated with that frequency.
+
+- #### Path to the source codes that solve the problem
+
+  [MostFrequentChar.cpp](./String/MostFrequentChar.cpp)
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
 

@@ -17,7 +17,7 @@ Some coding problems to practice & review for interviews
     4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
     5. [RemoveDupChar](#remove-duplicate-char)
     6. [MostFrequentChar](#most-frequent-char)
-    7. AllPermutations
+    7. [AllPermutations](#all-permutations)
     8. LongestSubPalindrome
     9. LongestCommonSubsequence
 - Array
@@ -442,4 +442,40 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   O(N)
 
   N = length of input string.
+---
+
+- ## All Permutations
+
+- ### Problem Statement
+  Given a string, find all possible permutations of string's characters.
+  Return array of strings in any order.
+
+  Example:
+  ```java
+  arr = allPermutations("abcc");
+  print(arr);
+  // should output: (in any form of array printing format)
+  // ["abcc", "acbc", "accb", "bacc", "bcac", "bcca", "cabc", "cbac", "cacb", "cbca", //  "ccab", "ccba"]
+  ```
+
+- ### Solution
+
+  Recursively takes portion of string from (0, N-1) -> (N-2, N-1).
+
+  Makes all combinations of swaps with first character and the rest of string,
+
+  and append it into permutation set.
+
+- #### Path to the source codes that solve the problem
+
+  [AllPermutations.py](./String/AllPermutations.py)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N!)
+
+  Given string of length N, recursively calls itself N! times.
+
+  Swapping and adding to set each takes O(1).
+
 ---

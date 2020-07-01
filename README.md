@@ -18,7 +18,7 @@ Some coding problems to practice & review for interviews
     5. [RemoveDupChar](#remove-duplicate-char)
     6. [MostFrequentChar](#most-frequent-char)
     7. [AllPermutations](#all-permutations)
-    8. LongestSubPalindrome
+    8. [LongestSubPalindrome](#longest-sub-palindrome)
     9. LongestCommonSubsequence
 - Array
     1. FindMissing
@@ -477,5 +477,53 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   Given string of length N, recursively calls itself N! times.
 
   Swapping and adding to set each takes O(1).
+
+---
+
+- ## Longest Sub-Palindrome
+
+- ### Problem Statement
+  Given a string, find the longest substring that is a palindrome.
+  
+  Return any if there are multiple with the same length.
+
+  Example:
+  ```java
+  LSP = longestSubPalin("abaab");
+  print(LSP);
+  // should output:
+  // baab
+  ```
+
+- ### Solution
+
+  String of length 1 is always a palindrome.
+
+  Using dynamic programming, check if substrings are palindrome from bottom-up
+
+  1. create dynamic table arr[N][N]
+  2. fill in `null` or `false` for cells where i > j
+  3. fill in `true` for cells where i == j (length 1 string)
+  4. for all i < j:
+    
+      if i+1 > j-1, then check if str[i] == str[j]
+
+      else, check arr[i+1][j-1] (to see the middle sub-portion of substring is itself palindrome), and also str[i] == str[j]
+
+  5. Lastly, for cells with `true`, the max difference between `j` and `i` yields `i` for starting index and `j` for end index.
+
+  **Visualization** *(using `abaab` as input string)*:
+
+  ![Longest Sub-Palindrome Image](./assets/longestSubPalindrome_dpTable.png)
+
+- #### Path to the source codes that solve the problem
+
+  [LongestSubPalindrome.java](./String/LongestSubPalindrome.java)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N^2) for both time and space complexity.
+
+  The algorithm iterates over the N x N table.
 
 ---

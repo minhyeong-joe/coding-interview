@@ -514,7 +514,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   **Visualization** *(using `abaab` as input string)*:
 
-  ![Longest Sub-Palindrome Image](./assets/longestSubPalindrome_dpTable.png)
+  ![Longest Sub-Palindrome Image](./assets/longestSubPalindrome_dpTable.PNG)
 
 - #### Path to the source codes that solve the problem
 

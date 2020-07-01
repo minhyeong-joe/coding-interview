@@ -46,21 +46,16 @@ public class LongestSubPalindrome {
         // Search from "right-upper corner" diagonally
         // i = 0 | 0 1 | 0 1 2 | 0 1 2 3 | 0 1 2 3 4
         // j = 4 | 3 4 | 2 3 4 | 1 2 3 4 | 0 1 2 3 4
-        int startIndex = 0;
-        int endIndex = 0;
-        outmostloop:
         for (int k = 0; k < N; k++) {
             for (int i = 0; i <= k; i++) {
                 int j = N-1 - k + i;
                 if (dpTable[i][j]) {
-                    startIndex = i;
-                    endIndex = j;
-                    break outmostloop;
+                    return str.substring(i, j+1);
                 }
             }
         }
 
-        return str.substring(startIndex, endIndex+1);
+        return "err";
     }
 
 

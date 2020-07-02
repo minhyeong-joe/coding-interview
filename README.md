@@ -19,7 +19,7 @@ Some coding problems to practice & review for interviews
     6. [MostFrequentChar](#most-frequent-char)
     7. [AllPermutations](#all-permutations)
     8. [LongestSubPalindrome](#longest-sub-palindrome)
-    9. LongestCommonSubsequence
+    9. [LongestCommonSubsequence](#longest-common-subsequence)
 - Array
     1. FindMissing
     2. FindDuplicate
@@ -525,5 +525,50 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   O(N^2) for both time and space complexity.
 
   The algorithm iterates over the N x N table.
+
+---
+
+- ## Longest Common Subsequence
+
+- ### Problem Statement
+  Given two strings, find the longest common subsequence of the two.
+
+  Subsequence, unlike substring, is not required to occupy consecutive positions within the original sequences.
+  
+  Return any common subsequence if there are multiple with the same length.
+
+  Example:
+  ```java
+  LCS = longestCommonSubSeq("abcd", "acbad");
+  print(LSP);
+  // should output either/both:
+  // abd, acd
+  ```
+
+- ### Solution
+
+  Using dynamic programming:
+
+  1. create dynamic table arr[M+1][N+1]
+  2. initialize i=0 and j=0 as `0`
+  3. if str1[i]==str2[j]:
+    
+      then add `1` to previous LCS (AKA, arr[i-1][j-1])
+
+     if str1[i]!=str2[j]:
+
+     then take the greater value between arr[i-1][j] and arr[i][j-1]
+
+  4. backtrack from the highest value of the table, and generate commons subsequence string.
+
+- #### Path to the source codes that solve the problem
+
+  [LongestCommonSubsequence.cpp](./String/LongestCommonSubsequence.cpp)
+
+- #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(M*N) for both time and space complexity.
+
+  The algorithm iterates over the (M+1) x (N+1) table.
 
 ---

@@ -21,7 +21,7 @@ Some coding problems to practice & review for interviews
     8. [LongestSubPalindrome](#longest-sub-palindrome)
     9. [LongestCommonSubsequence](#longest-common-subsequence)
 - Array
-    1. FindMissing
+    1. [FindMissing](#find-missing)
     2. FindDuplicate
     3. FindSecondMax
     4. PairSum
@@ -571,4 +571,50 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   The algorithm iterates over the (M+1) x (N+1) table.
 
+---
+## **Array**
+---
+
+- ## Find Missing
+
+- ### Problem Statement
+    Given an unsorted array of size N-1 with no duplicate values from 0 to N, with one missing value.
+
+    Find the missing value between 0 and N.
+
+    **Example:**
+    ```java
+    missing = findMissing([1, 5, 7, 3, 8, 6, 9, 2, 0]);   // 0~9, with 4 missing
+    print(missing);
+    // should output either/both:
+    // 4
+    ```
+
+- ### Solution
+
+    Create a boolean array arr with size N.
+
+    for each i in input array, set arr[i] as true
+
+    Once done iterating input array,
+
+    for each element in array, return `i` for the false cell.
+    
+    **Another solution** *(not implemented with code)*
+      
+    Sort the array with O(n log n) sorting algorithm,
+
+    return the number that "jumps" 2 steps to the next value.
+
+    O(n log n) time complexity, and O(1) space complexity
+
+  - #### Path to the source codes that solve the problem
+
+    [FindMissing.py](./Array/FindMissing.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N) for iterating over input array
+
+    O(N) for space complexity for making boolean array.
 ---

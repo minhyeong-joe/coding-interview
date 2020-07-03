@@ -22,7 +22,7 @@ Some coding problems to practice & review for interviews
     9. [LongestCommonSubsequence](#longest-common-subsequence)
 - Array
     1. [FindMissing](#find-missing)
-    2. FindDuplicate
+    2. [FindDuplicate](#find-duplicate)
     3. FindSecondMax
     4. PairSum
     5. SubsetSum
@@ -617,4 +617,49 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
     O(N) for iterating over input array
 
     O(N) for space complexity for making boolean array.
+---
+
+- ## Find Duplicate
+
+- ### Problem Statement
+    
+    Given a list, find a duplicate element.
+
+    Extension: Find all duplicate elements if there are multiple.
+
+    **Example:**
+    ```java
+    dup = findDup([2, 4, 3, 2, 8, 7, 0, 1, 3]);  // 2 and 3 are duplicates
+    print(dup);
+    // should output either
+    // 2 or 3
+    
+    // Extension
+    dups = findDup([2, 4, 3, 2, 8, 7, 0, 1, 3]);
+    print(dups);
+    // should output array in language-specific format
+    // [2, 3]
+    ```
+
+- ### Solution
+
+  For single duplicate,
+
+  iterate through array, and keep track of counted word using dictionary.
+
+  If the element is already in the dictionary, then return that element.
+
+  For multiple duplicates,
+
+  do the same, but do not return immediately.
+
+  Instead, iterate entire array and push duplicates into returned array.
+
+  - #### Path to the source codes that solve the problem
+
+    [FindDuplicate.py](./Array/FindDuplicate.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N) for iterating over input array
 ---

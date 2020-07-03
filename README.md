@@ -23,7 +23,7 @@ Some coding problems to practice & review for interviews
 - Array
     1. [FindMissing](#find-missing)
     2. [FindDuplicate](#find-duplicate)
-    3. FindSecondMax
+    3. [FindSecondMax](#find-second-max)
     4. PairSum
     5. SubsetSum
     6. ReverseInPlace
@@ -662,4 +662,43 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
     O(N) for iterating over input array
+---
+
+- ## Find Second Max
+
+- ### Problem Statement
+    
+    Given a list of integers, find the second highest value. Return any if multiple.
+
+    **Example:**
+    ```java
+    secMax = findSecondMax([2, 4, 5, 3, 8, 6, 1]);
+    print(secMax);
+    // should output
+    // 6
+    ```
+
+- ### Solution
+
+  Naive approach would simply iterate M times to find Mth highest value,
+
+  but this would take O(N^M) to iterate length N array M times.
+
+  Instead, keep track of M high values in a "ranking" array of size M.
+
+  - #### Path to the source codes that solve the problem
+
+    [FindSecondMax.java](./Array/FindSecondMax.java)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N*M),
+
+    N = input array size
+
+    M = Mth max value
+
+    M is generally much less than N (generally search for top 3 out of 100 or so),
+
+    but in worst case, M = N => O(N^2)
 ---

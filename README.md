@@ -1,65 +1,70 @@
 # Coding Interview
+
 Some coding problems to practice & review for interviews
 
 # Navigation
+
 - Search and Sort
-    1. [BubbleSort](#bubble-sort)
-    2. [InsertionSort](#insertion-sort)
-    3. [MergeSort](#merge-sort)
-    4. [QuickSort](#quick-sort)
-    5. [RadixSort (and counting sort)](#radix-sort)
-    6. [BucketSort](#bucket-sort)
-    7. [BinarySearch](#binary-search)
+  1. [BubbleSort](#bubble-sort)
+  2. [InsertionSort](#insertion-sort)
+  3. [MergeSort](#merge-sort)
+  4. [QuickSort](#quick-sort)
+  5. [RadixSort (and counting sort)](#radix-sort)
+  6. [BucketSort](#bucket-sort)
+  7. [BinarySearch](#binary-search)
 - String
-    1. [IsPalindrome](#is-palindrome)
-    2. [IsAnagram](#is-anagram)
-    3. [RemoveAllChars](#remove-all-chars)
-    4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
-    5. [RemoveDupChar](#remove-duplicate-char)
-    6. [MostFrequentChar](#most-frequent-char)
-    7. [AllPermutations](#all-permutations)
-    8. [LongestSubPalindrome](#longest-sub-palindrome)
-    9. [LongestCommonSubsequence](#longest-common-subsequence)
+  1. [IsPalindrome](#is-palindrome)
+  2. [IsAnagram](#is-anagram)
+  3. [RemoveAllChars](#remove-all-chars)
+  4. [FindFirstNonRepeatedChar](#find-first-non-repeated-char)
+  5. [RemoveDupChar](#remove-duplicate-char)
+  6. [MostFrequentChar](#most-frequent-char)
+  7. [AllPermutations](#all-permutations)
+  8. [LongestSubPalindrome](#longest-sub-palindrome)
+  9. [LongestCommonSubsequence](#longest-common-subsequence)
 - Array
-    1. [FindMissing](#find-missing)
-    2. [FindDuplicate](#find-duplicate)
-    3. [FindSecondMax](#find-second-max)
-    4. PairSum
-    5. SubsetSum
-    6. ReverseInPlace
-    7. Partition
+  1. [FindMissing](#find-missing)
+  2. [FindDuplicate](#find-duplicate)
+  3. [FindSecondMax](#find-second-max)
+  4. [PairSum](#pair-sum)
+  5. SubsetSum
+  6. ReverseInPlace
+  7. Partition
 - LinkedList
-    1. MiddleElementSinglePass
-    2. NthFromLast
-    3. ReverseSinglyLinkedList
-    4. MergeTwoSortedLists
-    5. RemoveDuplicate
+  1. MiddleElementSinglePass
+  2. NthFromLast
+  3. ReverseSinglyLinkedList
+  4. MergeTwoSortedLists
+  5. RemoveDuplicate
 - Graph and Tree
-    1. FindDepth
-    2. InOrderTraversal
-    3. PreOrderTraversal
-    4. PostOrderTraversal
-    5. BalanceCheck
-    6. ShortestPath
-    7. HamiltonPath
+  1. FindDepth
+  2. InOrderTraversal
+  3. PreOrderTraversal
+  4. PostOrderTraversal
+  5. BalanceCheck
+  6. ShortestPath
+  7. HamiltonPath
 - Number and Math
-    1. IsPowerOfTwo
-    2. FindPrimeGivenUpperBound
-    3. BinaryConversion
-    4. SumOfDigits
-    5. PrimeFactorization
-    6. SieveOfEratosthenes
+  1. IsPowerOfTwo
+  2. FindPrimeGivenUpperBound
+  3. BinaryConversion
+  4. SumOfDigits
+  5. PrimeFactorization
+  6. SieveOfEratosthenes
 
 # Problems
 
 ## **Search and Sort**
+
 ---
 
 - ## Bubble Sort
 
 - ### Problem Statement
-    Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
-The pass through the list is repeated until the list is sorted.
+
+      Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
+
+  The pass through the list is repeated until the list is sorted.
 
 - ### Solution
 
@@ -78,8 +83,10 @@ The pass through the list is repeated until the list is sorted.
 - ## Insertion Sort
 
 - ### Problem Statement
-    Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.
-At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
+
+      Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.
+
+  At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
 
 - ### Solution
 
@@ -89,17 +96,19 @@ At each iteration, insertion sort removes one element from the input data, finds
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-    O(N^2).
+        O(N^2).
 
-    Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
-to decide i-th element's new order. (More "shifts" required for worst case)
+        Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
+
+    to decide i-th element's new order. (More "shifts" required for worst case)
 
 ---
 
 - ## Merge Sort
 
 - ### Problem Statement
-    Conceptually, a merge sort works as follows:
+  Conceptually, a merge sort works as follows:
+
 1. Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
 2. Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
 
@@ -111,16 +120,18 @@ to decide i-th element's new order. (More "shifts" required for worst case)
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-    O(N log N).
+        O(N log N).
 
-    Similar to binary operations (divide-and-conquer), each split/merge divides the problem
-into subproblems of half the size. It takes log N divisions and in each subproblem, N time to sort.
+        Similar to binary operations (divide-and-conquer), each split/merge divides the problem
+
+    into subproblems of half the size. It takes log N divisions and in each subproblem, N time to sort.
 
 ---
 
 - ## Quick Sort
 
 - ### Problem Statement
+
   Quicksort is a divide-and-conquer algorithm.
   It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
   The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting.
@@ -145,6 +156,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - ## Radix Sort
 
 - ### Problem Statement
+
   Radix sort sorts digit by digit.
   Starting with least significant digit, algorithm uses counting sort as subroutine to sort the list.
   For example, for 3-digit integers, counting sort is called three times.
@@ -177,13 +189,14 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   With X being the largest number with base-10,
 
-  d = floor((log_10)X) + 1  
+  d = floor((log_10)X) + 1
 
 ---
 
 - ## Bucket Sort
 
 - ### Problem Statement
+
   Bucket Sort first places input elements into corresponding bins,
   then sort the bins separately, and lastly concatenate all the bins as a single sorted list.
 
@@ -214,15 +227,17 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - ## Binary Search
 
 - ### Problem Statement
+
   Binary Search utilizes **Sorted** list to search for a target within the given list.
 
 - ### Solution
 
   It compares middle value to target value, and do the following:
-    1. if target == middle, return middle
-    2. if target > middle, do recursive search on right of middle
-    3. if target < middle, do recursive search on left of middle
-    4. if sub-array is not valid (ie. left-end and right-end crossed path), then element is not found, thus return -1 as flag.
+
+  1. if target == middle, return middle
+  2. if target > middle, do recursive search on right of middle
+  3. if target < middle, do recursive search on left of middle
+  4. if sub-array is not valid (ie. left-end and right-end crossed path), then element is not found, thus return -1 as flag.
 
 - #### Path to the source codes that solve the problem
 
@@ -240,15 +255,18 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   Because this is simply divide-and-conquer, each recursion keeps "half-ing" the problem. For N elements, it takes at most log N + 1 recursive calls including the very first call from main.
 
-  In each recursion, it simply compares the values and return index, so this is O(1), thus total time complexity is O(log N) 
+  In each recursion, it simply compares the values and return index, so this is O(1), thus total time complexity is O(log N)
 
 ---
+
 ## **String**
+
 ---
 
 - ## Is Palindrome
 
 - ### Problem Statement
+
   A palindrome is a word, phrase, number or sequence of words that reads the same backward as forward.
 
   ie) racecar, level, noon, rotator...
@@ -276,6 +294,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - ## Is Anagram
 
 - ### Problem Statement
+
   An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
 
   Write a program to detect if a string is an anagram of another input string.
@@ -294,7 +313,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
 
-  **naive approach**: O(N*M), O(N^2)
+  **naive approach**: O(N\*M), O(N^2)
 
   N is the length of input string A, and M is the length of input string B.
 
@@ -309,16 +328,19 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   Then scans through string B of length M to match the occurrences.
 
   Total time complexity is O(max(N,M))
+
 ---
 
 - ## Remove All Chars
 
 - ### Problem Statement
+
   Given a string and an array of characters, remove all occurrences of characters in array from the string. (case-insensitive)
 
   (Obviously, without using built-in string methods like substring, removeAll, etc)
 
   Example:
+
   ```java
   str = removeAllChars("Hello, World", ['h', 'l']);
   print(str);
@@ -338,14 +360,16 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
 
-  O(N * M)
+  O(N \* M)
 
   given string of length N and array of length M.
+
 ---
 
 - ## Find First Non-repeated Char
 
 - ### Problem Statement
+
   Given a string find the first character that does not repeat (AKA, appears only once in the string). (Case-sensitive)
 
   **Extension**:
@@ -353,6 +377,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   find **ALL** non-repeating characters in the string
 
   Example:
+
   ```java
   ch = findFirstNoneRepeatedChar("abacdeac")
   print(ch);
@@ -382,14 +407,17 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   O(N)
 
   N = length of input string.
+
 ---
 
 - ## Remove Duplicate Char
 
 - ### Problem Statement
+
   Given a string, remove all the duplicate characters (case-sensitive).
 
   Example:
+
   ```java
   str = removeDupChar("Hello World")
   print(str);
@@ -412,14 +440,17 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   O(N)
 
   N = length of input string.
+
 ---
 
 - ## Most Frequent Char
 
 - ### Problem Statement
+
   Given a string, find the most frequent character (return any if multiple, case-sensitive)
 
   Example:
+
   ```java
   ch = mostFrequentChar("Hello World")
   print(ch);
@@ -442,15 +473,18 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   O(N)
 
   N = length of input string.
+
 ---
 
 - ## All Permutations
 
 - ### Problem Statement
+
   Given a string, find all possible permutations of string's characters.
   Return array of strings in any order.
 
   Example:
+
   ```java
   arr = allPermutations("abcc");
   print(arr);
@@ -483,11 +517,13 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - ## Longest Sub-Palindrome
 
 - ### Problem Statement
+
   Given a string, find the longest substring that is a palindrome.
-  
+
   Return any if there are multiple with the same length.
 
   Example:
+
   ```java
   LSP = longestSubPalin("abaab");
   print(LSP);
@@ -501,18 +537,18 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   Using dynamic programming, check if substrings are palindrome from bottom-up
 
-  1. create dynamic table arr[N][N]
+  1. create dynamic table arr[N][n]
   2. fill in `null` or `false` for cells where i > j
   3. fill in `true` for cells where i == j (length 1 string)
   4. for all i < j:
-    
-      if i+1 > j-1, then check if str[i] == str[j]
 
-      else, check arr[i+1][j-1] (to see the middle sub-portion of substring is itself palindrome), and also str[i] == str[j]
+     if i+1 > j-1, then check if str[i] == str[j]
+
+     else, check arr[i+1][j-1] (to see the middle sub-portion of substring is itself palindrome), and also str[i] == str[j]
 
   5. Lastly, for cells with `true`, the max difference between `j` and `i` yields `i` for starting index and `j` for end index.
 
-  **Visualization** *(using `abaab` as input string)*:
+  **Visualization** _(using `abaab` as input string)_:
 
   ![Longest Sub-Palindrome Image](./assets/longestSubPalindrome_dpTable.PNG)
 
@@ -531,13 +567,15 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 - ## Longest Common Subsequence
 
 - ### Problem Statement
+
   Given two strings, find the longest common subsequence of the two.
 
   Subsequence, unlike substring, is not required to occupy consecutive positions within the original sequences.
-  
+
   Return any common subsequence if there are multiple with the same length.
 
   Example:
+
   ```java
   LCS = longestCommonSubSeq("abcd", "acbad");
   print(LSP);
@@ -549,11 +587,11 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   Using dynamic programming:
 
-  1. create dynamic table arr[M+1][N+1]
+  1. create dynamic table arr[M+1][n+1]
   2. initialize i=0 and j=0 as `0`
   3. if str1[i]==str2[j]:
-    
-      then add `1` to previous LCS (AKA, arr[i-1][j-1])
+
+     then add `1` to previous LCS (AKA, arr[i-1][j-1])
 
      if str1[i]!=str2[j]:
 
@@ -567,46 +605,50 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
 - #### If applicable, What is time complexity of the solution? (Big-O)
 
-  O(M*N) for both time and space complexity.
+  O(M\*N) for both time and space complexity.
 
   The algorithm iterates over the (M+1) x (N+1) table.
 
 ---
+
 ## **Array**
+
 ---
 
 - ## Find Missing
 
 - ### Problem Statement
-    Given an unsorted array of size N-1 with no duplicate values from 0 to N, with one missing value.
 
-    Find the missing value between 0 and N.
+  Given an unsorted array of size N-1 with no duplicate values from 0 to N, with one missing value.
 
-    **Example:**
-    ```java
-    missing = findMissing([1, 5, 7, 3, 8, 6, 9, 2, 0]);   // 0~9, with 4 missing
-    print(missing);
-    // should output either/both:
-    // 4
-    ```
+  Find the missing value between 0 and N.
+
+  **Example:**
+
+  ```java
+  missing = findMissing([1, 5, 7, 3, 8, 6, 9, 2, 0]);   // 0~9, with 4 missing
+  print(missing);
+  // should output either/both:
+  // 4
+  ```
 
 - ### Solution
 
-    Create a boolean array arr with size N.
+  Create a boolean array arr with size N.
 
-    for each i in input array, set arr[i] as true
+  for each i in input array, set arr[i] as true
 
-    Once done iterating input array,
+  Once done iterating input array,
 
-    for each element in array, return `i` for the false cell.
+  for each element in array, return `i` for the false cell.
+
+  **Another solution** _(not implemented with code)_
     
-    **Another solution** *(not implemented with code)*
-      
-    Sort the array with O(n log n) sorting algorithm,
+   Sort the array with O(n log n) sorting algorithm,
 
-    return the number that "jumps" 2 steps to the next value.
+  return the number that "jumps" 2 steps to the next value.
 
-    O(n log n) time complexity, and O(1) space complexity
+  O(n log n) time complexity, and O(1) space complexity
 
   - #### Path to the source codes that solve the problem
 
@@ -617,29 +659,31 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
     O(N) for iterating over input array
 
     O(N) for space complexity for making boolean array.
+
 ---
 
 - ## Find Duplicate
 
 - ### Problem Statement
-    
-    Given a list, find a duplicate element.
 
-    Extension: Find all duplicate elements if there are multiple.
+  Given a list, find a duplicate element.
 
-    **Example:**
-    ```java
-    dup = findDup([2, 4, 3, 2, 8, 7, 0, 1, 3]);  // 2 and 3 are duplicates
-    print(dup);
-    // should output either
-    // 2 or 3
-    
-    // Extension
-    dups = findDup([2, 4, 3, 2, 8, 7, 0, 1, 3]);
-    print(dups);
-    // should output array in language-specific format
-    // [2, 3]
-    ```
+  Extension: Find all duplicate elements if there are multiple.
+
+  **Example:**
+
+  ```java
+  dup = findDup([2, 4, 3, 2, 8, 7, 0, 1, 3]);  // 2 and 3 are duplicates
+  print(dup);
+  // should output either
+  // 2 or 3
+
+  // Extension
+  dups = findDup([2, 4, 3, 2, 8, 7, 0, 1, 3]);
+  print(dups);
+  // should output array in language-specific format
+  // [2, 3]
+  ```
 
 - ### Solution
 
@@ -662,21 +706,23 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
     O(N) for iterating over input array
+
 ---
 
 - ## Find Second Max
 
 - ### Problem Statement
-    
-    Given a list of integers, find the second highest value. Return any if multiple.
 
-    **Example:**
-    ```java
-    secMax = findSecondMax([2, 4, 5, 3, 8, 6, 1]);
-    print(secMax);
-    // should output
-    // 6
-    ```
+  Given a list of integers, find the second highest value. Return any if multiple.
+
+  **Example:**
+
+  ```java
+  secMax = findSecondMax([2, 4, 5, 3, 8, 6, 1]);
+  print(secMax);
+  // should output
+  // 6
+  ```
 
 - ### Solution
 
@@ -692,7 +738,7 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-    O(N*M),
+    O(N\*M),
 
     N = input array size
 
@@ -701,4 +747,52 @@ into subproblems of half the size. It takes log N divisions and in each subprobl
     M is generally much less than N (generally search for top 3 out of 100 or so),
 
     but in worst case, M = N => O(N^2)
+
+---
+
+- ## Pair Sum
+
+- ### Problem Statement
+
+  Given an unsorted list of integers and a target value,
+
+  find a pair that sums up to be the target value.
+
+  Return any if multiple pairs are in the array.
+
+  **Example:**
+
+  ```java
+  pair = pairSum([3, 7, 2, 5, 6], 9);
+  print(secMax);
+  // should output
+  // [3, 6]
+  // or
+  // [7, 2]
+  ```
+
+- ### Solution
+
+  1. Use dictionary to "remember" elements of array, then find the pair iterating over the array
+
+     (Requires two separate runs on array)
+
+  2. Sort the list first, then use two "pointers" from left-end and right-end to find the pair.
+
+     (Single, or Half, run, but requires pre-sorting)
+
+  - #### Path to the source codes that solve the problem
+
+    Using Dictionary:
+    [PairSum.java](./Array/PairSum.java)
+
+    Using sorted array:
+    [PairSum.py](./Array/PairSum.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    1. Using Dictionary: O(N)
+
+    2. Using sorted Array: with efficient sorting algorithm, O(N log N)
+
 ---

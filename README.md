@@ -27,7 +27,7 @@ Some coding problems to practice & review for interviews
   2. [FindDuplicate](#find-duplicate)
   3. [FindSecondMax](#find-second-max)
   4. [PairSum](#pair-sum)
-  5. SubsetSum
+  5. [SubsetSum](#subset-sum)
   6. ReverseInPlace
   7. Partition
 - LinkedList
@@ -78,6 +78,8 @@ Some coding problems to practice & review for interviews
 
     Maximum N-1 iterations, and in each iteration, algorithm scans each of N elements.
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Insertion Sort
@@ -101,6 +103,8 @@ Some coding problems to practice & review for interviews
         Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
 
     to decide i-th element's new order. (More "shifts" required for worst case)
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -126,6 +130,8 @@ Some coding problems to practice & review for interviews
 
     into subproblems of half the size. It takes log N divisions and in each subproblem, N time to sort.
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Quick Sort
@@ -150,6 +156,8 @@ Some coding problems to practice & review for interviews
   The solution used **Hoarse Partition Scheme** (pivot in the middle and two "pointers" from two ends of array)
   So even for sorted array, the worst case is still O(n log n).
   **Lomuto Partition Scheme** (pivot at the end, and comparison "pointer" from start of index) can be O(n^2) on already sorted list.
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -191,6 +199,8 @@ Some coding problems to practice & review for interviews
 
   d = floor((log_10)X) + 1
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Bucket Sort
@@ -221,6 +231,8 @@ Some coding problems to practice & review for interviews
   In worst case, if all items fall into the same bin, can take O(N^2)
 
   If all items are evenly distributed, then it can take O(N) time as no sorting within bucket required.
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -257,6 +269,8 @@ Some coding problems to practice & review for interviews
 
   In each recursion, it simply compares the values and return index, so this is O(1), thus total time complexity is O(log N)
 
+**[Back To Top](#navigation)**
+
 ---
 
 ## **String**
@@ -288,6 +302,8 @@ Some coding problems to practice & review for interviews
   O(N)
 
   Scans the input string of length N single time.
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -329,6 +345,8 @@ Some coding problems to practice & review for interviews
 
   Total time complexity is O(max(N,M))
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Remove All Chars
@@ -363,6 +381,8 @@ Some coding problems to practice & review for interviews
   O(N \* M)
 
   given string of length N and array of length M.
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -408,6 +428,8 @@ Some coding problems to practice & review for interviews
 
   N = length of input string.
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Remove Duplicate Char
@@ -441,6 +463,8 @@ Some coding problems to practice & review for interviews
 
   N = length of input string.
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Most Frequent Char
@@ -473,6 +497,8 @@ Some coding problems to practice & review for interviews
   O(N)
 
   N = length of input string.
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -511,6 +537,8 @@ Some coding problems to practice & review for interviews
   Given string of length N, recursively calls itself N! times.
 
   Swapping and adding to set each takes O(1).
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -562,6 +590,8 @@ Some coding problems to practice & review for interviews
 
   The algorithm iterates over the N x N table.
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Longest Common Subsequence
@@ -608,6 +638,8 @@ Some coding problems to practice & review for interviews
   O(M\*N) for both time and space complexity.
 
   The algorithm iterates over the (M+1) x (N+1) table.
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -660,6 +692,8 @@ Some coding problems to practice & review for interviews
 
     O(N) for space complexity for making boolean array.
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Find Duplicate
@@ -707,6 +741,8 @@ Some coding problems to practice & review for interviews
 
     O(N) for iterating over input array
 
+**[Back To Top](#navigation)**
+
 ---
 
 - ## Find Second Max
@@ -747,6 +783,8 @@ Some coding problems to practice & review for interviews
     M is generally much less than N (generally search for top 3 out of 100 or so),
 
     but in worst case, M = N => O(N^2)
+
+**[Back To Top](#navigation)**
 
 ---
 
@@ -794,5 +832,58 @@ Some coding problems to practice & review for interviews
     1. Using Dictionary: O(N)
 
     2. Using sorted Array: with efficient sorting algorithm, O(N log N)
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Subset Sum
+
+- ### Problem Statement
+
+  Given a list of positive integers and a target sum value,
+
+  find a subset of elements that sums up to the target sum value.
+
+  Return any if multiple subsets are possible.
+
+  **Example:**
+
+  ```java
+  subset = subsetSum([3, 7, 2, 5, 4], 6);
+  print(subset);
+  // should output
+  // [4, 2] or [2, 4]
+  ```
+
+- ### Solution
+
+  Subset Sum problem is one of the well-known NP-complete problem.
+
+  If naively taking each subset and compare the sum of each subset to the target sum value,
+
+  this would take O(2^n) as there are 2^n possible subsets.
+
+  Using dynamic programming can improve the time complexity with the cost of some space complexity.
+
+  Visual Dynamic Programming Table (*target = 6*):
+  
+  **each column: 0~sum, each row: 0 and each array element**
+
+  ![SubsetSum_dpTable Image](./assets/subsetSum_dpTable.png)  
+
+  - #### Path to the source codes that solve the problem
+
+    [SubsetSum.cpp](./Array/SubsetSum.cpp)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    N: # of elements of input array
+
+    M: target sum
+
+    O(N*M) for both time and space complexity, as dynamic programming requires the table of size `(N+1) X (M+1)`
+
+**[Back To Top](#navigation)**
 
 ---

@@ -866,7 +866,7 @@ Some coding problems to practice & review for interviews
 
   Using dynamic programming can improve the time complexity with the cost of some space complexity.
 
-  Visual Dynamic Programming Table (*target = 6*):
+  **Visual Dynamic Programming Table (*target = 6*):**
   
   **each column: 0~sum, each row: 0 and each array element**
 

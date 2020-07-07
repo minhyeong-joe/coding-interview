@@ -29,7 +29,7 @@ Some coding problems to practice & review for interviews
   4. [PairSum](#pair-sum)
   5. [SubsetSum](#subset-sum)
   6. [ReverseInPlace](#reverse-in-place)
-  7. Partition
+  7. [Partition](#partition)
 - LinkedList
   1. MiddleElementSinglePass
   2. NthFromLast
@@ -923,6 +923,48 @@ Some coding problems to practice & review for interviews
     O(N).
 
     Iterates entire array simultaneously from start and end, so approximately 1/2 * N iterations.
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Partition
+
+- ### Problem Statement
+
+  Given a list that is assumed to have a available partition, find the partition.
+
+  Partition is a subset of a list that splits the original array in two halves in terms of sum of elements
+
+  **Example:**
+
+  ```java
+  sub = partition([2, 6, 3, 4, 8, 5]);
+  print(sub);
+  // should output (format may vary)
+  // [[2, 3, 4, 5], [6, 8]]
+  // as 2+3+4+5=14 == 6+8=14
+  ```
+
+- ### Solution
+
+  I can use previously implemented [SubsetSum](#subset-sum) as a subroutine.
+
+  Each subset, by definition of partition, sums to half of the full sum,
+
+  so I can call subset sum to find one partition, and the rest of elements into another partition.
+
+  - #### Path to the source codes that solve the problem
+
+    [Partition.cpp](./Array/Partition.cpp)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N*M).
+
+    Where N is input array length, and M is the half of sum of input array elements,
+
+    as it uses SubsetSum as subroutine.
 
 **[Back To Top](#navigation)**
 

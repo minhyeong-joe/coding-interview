@@ -4,31 +4,28 @@
  * Return any if multiple subsets are possible.
  */
 
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "SubsetSum.h"
 
-vector<int> subsetSum(vector<int> arr, int sum);
-void displayDpTable(const vector<vector<bool>> &dpTable);
+// ****** Commented out to be used as subroutine of Partition.cpp ******
 
-int main(int argc, char const *argv[])
-{
-    vector<int> arr = {3, 7, 2, 5, 4};
-    const int TARGET_SUM = 6;
+// int main(int argc, char const *argv[])
+// {
+//     vector<int> arr = {3, 7, 2, 5, 4};
+//     const int TARGET_SUM = 6;
 
-    vector<int> subset = subsetSum(arr, TARGET_SUM);
+//     vector<int> subset = subsetSum(arr, TARGET_SUM);
     
-    cout << "[";
-    for (int i = 0; i < subset.size(); i++) {
-        cout << subset[i];
-        if (i < subset.size() - 1) {
-            cout << ", ";
-        }
-    }
-    cout << "]" << endl;
+//     cout << "[";
+//     for (int i = 0; i < subset.size(); i++) {
+//         cout << subset[i];
+//         if (i < subset.size() - 1) {
+//             cout << ", ";
+//         }
+//     }
+//     cout << "]" << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 // dpTable[i][j] is true iff there exists a subset that sums up to 'j' from 0~'i' values.

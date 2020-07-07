@@ -28,7 +28,7 @@ Some coding problems to practice & review for interviews
   3. [FindSecondMax](#find-second-max)
   4. [PairSum](#pair-sum)
   5. [SubsetSum](#subset-sum)
-  6. ReverseInPlace
+  6. [ReverseInPlace](#reverse-in-place)
   7. Partition
 - LinkedList
   1. MiddleElementSinglePass
@@ -883,6 +883,46 @@ Some coding problems to practice & review for interviews
     M: target sum
 
     O(N*M) for both time and space complexity, as dynamic programming requires the table of size `(N+1) X (M+1)`
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Reverse In-place
+
+- ### Problem Statement
+
+  Given a list,
+
+  reverse the order without using extra arrays.
+
+  **Example:**
+
+  ```java
+  arr = [1, 2, 3, 4, 5]
+  reverseInPlace(arr);
+  print(arr);
+  // should output
+  // [5, 4, 3, 2, 1]
+  ```
+
+- ### Solution
+
+  Start "pointers" from two opposite ends of the array,
+
+  swap two elements and move both "pointers" towards the middle.
+
+  At the end, when two "pointers" cross paths, end the iteration and return the reversed array.
+
+  - #### Path to the source codes that solve the problem
+
+    [ReverseInPlace.py](./Array/ReverseInPlace.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N).
+
+    Iterates entire array simultaneously from start and end, so approximately 1/2 * N iterations.
 
 **[Back To Top](#navigation)**
 

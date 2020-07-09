@@ -32,7 +32,7 @@ Some coding problems to practice & review for interviews
   7. [Partition](#partition)
 - LinkedList
   1. [MiddleElementSinglePass](#middle-element-single-pass)
-  2. NthFromLast
+  2. [NthFromLast](#nth-from-last)
   3. ReverseSinglyLinkedList
   4. MergeTwoSortedLists
   5. RemoveDuplicate
@@ -978,7 +978,7 @@ Some coding problems to practice & review for interviews
 
 ---
 
-- ## Middle Element Single-run
+- ## Middle Element Single-Pass
 
 - ### Problem Statement
 
@@ -1016,3 +1016,48 @@ Some coding problems to practice & review for interviews
     as it is a single run operation.
 
 **[Back To Top](#navigation)**
+
+---
+
+- ## Nth From Last
+
+- ### Problem Statement
+
+  Given a singly linked list, find the node that is at the n-th position from the last node.
+
+  Assume linked list is singly linked, and does not know the total count.
+
+  **Example:**
+
+  ```java
+  // Linked List:
+  // ll = a -> b -> c -> d -> e -> f
+  nthLast = nthFromLast(ll, 3);
+  print(nthLast);
+  // should output:
+  // c
+  ```
+
+- ### Solution
+
+  Instead of naively counting and retrieving nth from last node (which required two runs over linked list),
+
+  use two pointers: one moves to head + N, one starts from head,
+
+  and then move both pointer at the same pace,
+
+  and when `head + N` pointer hits the end, the other node is at `end - n` position
+
+  - #### Path to the source codes that solve the problem
+
+    [NthFromLast.java](./LinkedList/NthFromLast.java)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N)
+
+    as it is a single run operation.
+
+**[Back To Top](#navigation)**
+
+---

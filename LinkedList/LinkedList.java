@@ -10,13 +10,13 @@ public class LinkedList<T> {
     // Node
     static class Node<T> {
         private T data;
-        private Node next;
+        private Node<T> next;
         
         Node(T data) {
             this.data = data;
             this.next = null;
         }
-        Node(T data, Node next) {
+        Node(T data, Node<T> next) {
             this.data = data;
             this.next = next;
         }
@@ -25,7 +25,7 @@ public class LinkedList<T> {
             return this.data;
         }
 
-        public Node getNext() {
+        public Node<T> getNext() {
             return this.next;
         }
     }

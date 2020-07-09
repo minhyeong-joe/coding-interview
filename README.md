@@ -31,7 +31,7 @@ Some coding problems to practice & review for interviews
   6. [ReverseInPlace](#reverse-in-place)
   7. [Partition](#partition)
 - LinkedList
-  1. MiddleElementSinglePass
+  1. [MiddleElementSinglePass](#middle-element-single-pass)
   2. NthFromLast
   3. ReverseSinglyLinkedList
   4. MergeTwoSortedLists
@@ -969,3 +969,50 @@ Some coding problems to practice & review for interviews
 **[Back To Top](#navigation)**
 
 ---
+
+## **Linked List**
+
+*Linked lists are implemented with basic functionalities to avoid using language built-in data structure*
+
+[Java Implementation](./LinkedList/LinkedList.java)
+
+---
+
+- ## Middle Element Single-run
+
+- ### Problem Statement
+
+  Given a singly linked list, print out the middle element without naively iterating list twice.
+
+  Assume linked list is singly linked, and does not know the total count.
+
+  If there are two "middle" elements, return the second element.
+
+  **Example:**
+
+  ```java
+  // Linked List:
+  // ll = a -> b -> c -> d -> e -> f
+  mid = findMiddle(ll);
+  print(mid);
+  // should output:
+  // d
+  ```
+
+- ### Solution
+
+  With two pointers, one can go twice as fast as the other pointer,
+
+  and when the faster pointer reaches end, the slower pointer would be at the middle.
+
+  - #### Path to the source codes that solve the problem
+
+    [FindMiddleSingleRun.java](./LinkedList/FindMiddleSingleRun.java)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N)
+
+    as it is a single run operation.
+
+**[Back To Top](#navigation)**

@@ -976,6 +976,11 @@ Some coding problems to practice & review for interviews
 
 [Java Implementation](./LinkedList/LinkedList.java)
 
+[Python Implementation](./LinkedList/LinkedList.py)
+
+[C++ Implementation](./LinkedList/LinkedList.cpp)
+[C++ Header](./LinkedList/LinkedList.h)
+
 ---
 
 - ## Middle Element Single-Pass

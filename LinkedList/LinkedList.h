@@ -39,6 +39,7 @@ public:
     T getValue(int pos);
 
     // modifiers
+    void setHead(Node<T>* node);
     void insert(T value, int pos=0);
     void append(T value);
     void remove(int pos);

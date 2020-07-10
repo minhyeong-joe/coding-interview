@@ -55,12 +55,17 @@ LinkedList<T>::LinkedList(T const* arr, size_t size) {
 
 template<class T>
 LinkedList<T>::~LinkedList() {
-    // destructor
+    LinkedList<T>::clear();
 }
 
 template<class T>
 Node<T>* LinkedList<T>::getHead() {
     return this->head;
+}
+
+template<class T>
+void LinkedList<T>::setHead(Node<T>* node) {
+    this->head = node;
 }
 
 template<class T>

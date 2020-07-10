@@ -33,7 +33,7 @@ Some coding problems to practice & review for interviews
 - LinkedList
   1. [MiddleElementSinglePass](#middle-element-single-pass)
   2. [NthFromLast](#nth-from-last)
-  3. ReverseSinglyLinkedList
+  3. [ReverseSinglyLinkedList](#reverse-singly-linked-list)
   4. MergeTwoSortedLists
   5. RemoveDuplicate
 - Graph and Tree
@@ -1062,6 +1062,59 @@ Some coding problems to practice & review for interviews
     O(N)
 
     as it is a single run operation.
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Reverse Singly Linked List
+
+- ### Problem Statement
+
+  Given a singly linked list, reverse the list.
+
+  Reverse of a list with length 1 is itself.
+
+  **Example:**
+
+  ```java
+  // Linked List:
+  // ll = 4 -> 3 -> 2 -> 1 -> 0
+  // either in-place or new list
+  rev = reverse(ll)
+  print(rev)
+  // OR
+  reverse(ll)
+  print(ll)
+  // should output: (format may vary)
+  // 0 -> 1 -> 2 -> 3 -> 4
+  ```
+
+- ### Solution
+
+  Simple solution is to create a new linked list inserting each item of input linked list at the start position.
+
+  An in-place reverse can be achieved by having three pointers to point to previous, current, and next nodes.
+
+  start with prev being null, curr being head, next being head.next,
+
+  set curr's next to be prev, and then set prev to curr, curr to next, and next to next.next to traverse all three pointers simultaneously.
+
+  When next is null, set head of list to be curr.
+
+  - #### Path to the source codes that solve the problem
+
+    Simple: [ReverseLinkedList.java](./LinkedList/ReverseLinkedList.java)
+
+    In-place: [ReverseInPlace.cpp](./LinkedList/ReverseInPlace.cpp)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N)
+
+    as both solutions run the linked list one time.
+
+    But simple solution has O(N) space complexity whereas in-place solution has O(1) space complexity.
 
 **[Back To Top](#navigation)**
 

@@ -35,7 +35,7 @@ Some coding problems to practice & review for interviews
   2. [NthFromLast](#nth-from-last)
   3. [ReverseSinglyLinkedList](#reverse-singly-linked-list)
   4. [MergeTwoSortedLists](#merge-two-sorted-list)
-  5. RemoveDuplicate
+  5. [RemoveDuplicate](#remove-duplicate)
 - Graph and Tree
   1. FindDepth
   2. InOrderTraversal
@@ -675,8 +675,8 @@ Some coding problems to practice & review for interviews
   for each element in array, return `i` for the false cell.
 
   **Another solution** _(not implemented with code)_
-    
-   Sort the array with O(n log n) sorting algorithm,
+
+  Sort the array with O(n log n) sorting algorithm,
 
   return the number that "jumps" 2 steps to the next value.
 
@@ -866,11 +866,11 @@ Some coding problems to practice & review for interviews
 
   Using dynamic programming can improve the time complexity with the cost of some space complexity.
 
-  **Visual Dynamic Programming Table (*target = 6*):**
-  
+  **Visual Dynamic Programming Table (_target = 6_):**
+
   **each column: 0~sum, each row: 0 and each array element**
 
-  ![SubsetSum_dpTable Image](./assets/subsetSum_dpTable.png)  
+  ![SubsetSum_dpTable Image](./assets/subsetSum_dpTable.png)
 
   - #### Path to the source codes that solve the problem
 
@@ -882,7 +882,7 @@ Some coding problems to practice & review for interviews
 
     M: target sum
 
-    O(N*M) for both time and space complexity, as dynamic programming requires the table of size `(N+1) X (M+1)`
+    O(N\*M) for both time and space complexity, as dynamic programming requires the table of size `(N+1) X (M+1)`
 
 **[Back To Top](#navigation)**
 
@@ -922,7 +922,7 @@ Some coding problems to practice & review for interviews
 
     O(N).
 
-    Iterates entire array simultaneously from start and end, so approximately 1/2 * N iterations.
+    Iterates entire array simultaneously from start and end, so approximately 1/2 \* N iterations.
 
 **[Back To Top](#navigation)**
 
@@ -960,7 +960,7 @@ Some coding problems to practice & review for interviews
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-    O(N*M).
+    O(N\*M).
 
     Where N is input array length, and M is the half of sum of input array elements,
 
@@ -972,7 +972,7 @@ Some coding problems to practice & review for interviews
 
 ## **Linked List**
 
-*Linked lists are implemented with basic functionalities to avoid using language built-in data structure*
+_Linked lists are implemented with basic functionalities to avoid using language built-in data structure_
 
 [Java Implementation](./LinkedList/LinkedList.java)
 
@@ -1151,16 +1151,16 @@ Some coding problems to practice & review for interviews
 
   - #### Path to the source codes that solve the problem
 
-    Python: 
-    
+    Python:
+
     [LinkedList.py](./LinkedList/LinkedList.py)
 
     [MergeSortedList.py](./LinkedList/MergeSortedList.py)
 
     C++:
-    
+
     [LinkedList.h](./LinkedList/LinkedList.h)
-    
+
     [LinkedList.cpp](./LinkedList/LinkedList.cpp)
 
     [MergeSortedList.cpp](./LinkedList/MergeSortedList.cpp)
@@ -1170,6 +1170,44 @@ Some coding problems to practice & review for interviews
     O(N)
 
     N being the sum of number of elements in two given lists
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Remove Duplicate
+
+- ### Problem Statement
+
+  Given a linked list with duplicate items,
+
+  remove all duplicate items.
+
+  **Example:**
+
+  ```java
+  // list = a -> c -> b -> c -> d -> c -> b
+  removeDup(list)
+  print(list)
+  // should output: (format may vary)
+  // a -> c -> b -> d
+  ```
+
+- ### Solution
+
+  Use a set to check duplicate and remove from the linked list
+
+  - #### Path to the source codes that solve the problem
+
+    [RemoveDuplicate.py](./LinkedList/RemoveDuplicate.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N)
+
+    Python creating a set take O(N) time.
+
+    Traversing and deleting from a linked list also takes O(N) time each.
 
 **[Back To Top](#navigation)**
 

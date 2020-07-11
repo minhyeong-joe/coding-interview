@@ -34,7 +34,7 @@ Some coding problems to practice & review for interviews
   1. [MiddleElementSinglePass](#middle-element-single-pass)
   2. [NthFromLast](#nth-from-last)
   3. [ReverseSinglyLinkedList](#reverse-singly-linked-list)
-  4. MergeTwoSortedLists
+  4. [MergeTwoSortedLists](#merge-two-sorted-list)
   5. RemoveDuplicate
 - Graph and Tree
   1. FindDepth
@@ -1115,6 +1115,61 @@ Some coding problems to practice & review for interviews
     as both solutions run the linked list one time.
 
     But simple solution has O(N) space complexity whereas in-place solution has O(1) space complexity.
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Merge Two Sorted List
+
+  **This is rather a CPP & Python operator overloading exercise than algorithm challenge.**
+
+- ### Problem Statement
+
+  Given two sorted linked list, merge the two lists into one sorted linked list.
+
+  **Example:**
+
+  ```java
+  // listA = 2 -> 4 -> 5
+  // listB = 0 -> 1 -> 2 -> 3 -> 6
+  list = combine(listA, listB)
+  // OR overload operator
+  list = listA + listB
+  print(list)
+  // should output: (format may vary)
+  // 0 -> 1 -> 2 -> 2 -> 3 -> 4 -> 5 -> 6
+  ```
+
+- ### Solution
+
+  Not much algorithm here.
+
+  This is to get a hands-on on Python and CPP's operator overloading.
+
+  Simply iterate two lists and compare values and insert the less value first.
+
+  - #### Path to the source codes that solve the problem
+
+    Python: 
+    
+    [LinkedList.py](./LinkedList/LinkedList.py)
+
+    [MergeSortedList.py](./LinkedList/MergeSortedList.py)
+
+    C++:
+    
+    [LinkedList.h](./LinkedList/LinkedList.h)
+    
+    [LinkedList.cpp](./LinkedList/LinkedList.cpp)
+
+    [MergeSortedList.cpp](./LinkedList/MergeSortedList.cpp)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N)
+
+    N being the sum of number of elements in two given lists
 
 **[Back To Top](#navigation)**
 

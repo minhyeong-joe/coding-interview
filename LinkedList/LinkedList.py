@@ -120,3 +120,26 @@ class LinkedList:
             ptr = ptr.getNext()
         toString += "}"
         return toString
+
+    
+    # add two sorted lists in a new sorted list
+    # this is used for Merge Two Sorted List specifically
+    # so assume two linked lists are already sorted.
+    def __add__(self, other):
+        comb = LinkedList()
+        selfPtr = self.__head
+        otherPtr = other.__head
+        while selfPtr is not None and otherPtr is not None:
+            if selfPtr.getValue() < otherPtr.getValue():
+                comb.append(selfPtr.getValue())
+                selfPtr = selfPtr.getNext()
+            else:
+                comb.append(otherPtr.getValue())
+                otherPtr = otherPtr.getNext()
+        while selfPtr is not None:
+            comb.append(selfPtr.getValue())
+            selfPtr = selfPtr.getNext()
+        while otherPtr is not None:
+            comb.append(otherPtr.getValue())
+            otherPtr = otherPtr.getNext()
+        return comb

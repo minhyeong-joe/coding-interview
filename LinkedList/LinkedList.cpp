@@ -102,6 +102,10 @@ template<class T>
 void LinkedList<T>::append(T value) {
     Node<T>* newNode = new Node<T>(value);
     Node<T>* ptr = this->head;
+    if (ptr == nullptr) {
+        this->head = newNode;
+        return;
+    }
     while (ptr->getNext() != nullptr) {
         ptr = ptr->getNext();
     }
@@ -136,6 +140,9 @@ void LinkedList<T>::remove(int pos) {
 template<class T>
 void LinkedList<T>::clear() {
     Node<T>* ptr = this->head;
+    if (ptr == nullptr) {
+        return;
+    }
     if (ptr->getNext() == nullptr) {
         delete ptr;
         this->head = nullptr;
@@ -147,7 +154,45 @@ void LinkedList<T>::clear() {
         ptr = ptr->getNext();
         delete prevPtr;
     }
-    delete prevPtr;
     this->head = nullptr;
 }
 
+template<typename Type>
+std::ostream& operator<<(std::ostream &os, LinkedList<Type> &linkedList) {
+    os << "[";
+    Node<Type>* ptr = linkedList.getHead();
+    while(ptr != nullptr) {
+        os << ptr->getValue();
+        if (ptr->getNext() != nullptr) {
+            os << " => ";
+        }
+        ptr = ptr->getNext();
+    }
+    os << "]";
+    return os;
+};
+
+template<typename Type>
+LinkedList<Type> operator+(LinkedList<Type> &left, LinkedList<Type> &right) {
+    LinkedList<Type> merged;
+    Node<Type>* leftPtr = left.getHead();
+    Node<Type>* rightPtr = right.getHead();
+    while (leftPtr != nullptr && rightPtr != nullptr) {
+        if (leftPtr->getValue() < rightPtr->getValue()) {
+            merged.append(leftPtr->getValue());
+            leftPtr = leftPtr->getNext();
+        } else {
+            merged.append(rightPtr->getValue());
+            rightPtr = rightPtr->getNext();
+        }
+    }
+    while (leftPtr != nullptr) {
+        merged.append(leftPtr->getValue());
+        leftPtr = leftPtr->getNext();
+    }
+    while (rightPtr != nullptr) {
+        merged.append(rightPtr->getValue());
+        rightPtr = rightPtr->getNext();
+    }
+    return merged;
+}

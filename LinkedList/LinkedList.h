@@ -45,22 +45,22 @@ public:
     void remove(int pos);
     void clear();
 
+    // operator overloading
+    template<typename Type>
+    friend std::ostream& operator<<(std::ostream &os, LinkedList<Type> &linkedList);
+    
+    // add two sorted lists as another sorted list
+    // spcifically designed for Merge Two Sorted List
+    // assume two lists are already sorted
+    template<typename Type>
+    friend LinkedList<Type> operator+(LinkedList<Type> &left, LinkedList<Type> &right);
 };
 // utilities
-template<typename T>
-std::ostream& operator<<(std::ostream &os, LinkedList<T> &linkedList) {
-    os << "[";
-    Node<T>* ptr = linkedList.getHead();
-    while(ptr != nullptr) {
-        os << ptr->getValue();
-        if (ptr->getNext() != nullptr) {
-            os << " => ";
-        }
-        ptr = ptr->getNext();
-    }
-    os << "]";
-    return os;
-};
+template<typename Type>
+std::ostream& operator<<(std::ostream &os, LinkedList<Type> &linkedList);
+
+template<typename Type>
+LinkedList<Type> operator+(LinkedList<Type> &left, LinkedList<Type> &right);
 
 #include "LinkedList.cpp"
 

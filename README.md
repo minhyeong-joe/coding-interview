@@ -4,7 +4,7 @@ Some coding problems to practice & review for interviews
 
 # Navigation
 
-- Search and Sort
+- [Search and Sort](#search-and-sort)
   1. [BubbleSort](#bubble-sort)
   2. [InsertionSort](#insertion-sort)
   3. [MergeSort](#merge-sort)
@@ -12,7 +12,7 @@ Some coding problems to practice & review for interviews
   5. [RadixSort (and counting sort)](#radix-sort)
   6. [BucketSort](#bucket-sort)
   7. [BinarySearch](#binary-search)
-- String
+- [String](#string)
   1. [IsPalindrome](#is-palindrome)
   2. [IsAnagram](#is-anagram)
   3. [RemoveAllChars](#remove-all-chars)
@@ -22,7 +22,7 @@ Some coding problems to practice & review for interviews
   7. [AllPermutations](#all-permutations)
   8. [LongestSubPalindrome](#longest-sub-palindrome)
   9. [LongestCommonSubsequence](#longest-common-subsequence)
-- Array
+- [Array](#array)
   1. [FindMissing](#find-missing)
   2. [FindDuplicate](#find-duplicate)
   3. [FindSecondMax](#find-second-max)
@@ -30,20 +30,22 @@ Some coding problems to practice & review for interviews
   5. [SubsetSum](#subset-sum)
   6. [ReverseInPlace](#reverse-in-place)
   7. [Partition](#partition)
-- LinkedList
+- [LinkedList](#linked-list)
   1. [MiddleElementSinglePass](#middle-element-single-pass)
   2. [NthFromLast](#nth-from-last)
   3. [ReverseSinglyLinkedList](#reverse-singly-linked-list)
   4. [MergeTwoSortedLists](#merge-two-sorted-list)
   5. [RemoveDuplicate](#remove-duplicate)
-- Graph and Tree
-  1. FindDepth
+- [Graph](#graph)
+  1. BreadthFirstSearch
+  2. DepthFirstSearch
+  3. ShortestPath
+  4. HamiltonPath
+- Binary Tree
+  1. FindHeight
   2. InOrderTraversal
   3. PreOrderTraversal
   4. PostOrderTraversal
-  5. BalanceCheck
-  6. ShortestPath
-  7. HamiltonPath
 - Number and Math
   1. IsPowerOfTwo
   2. FindPrimeGivenUpperBound
@@ -1210,5 +1212,11 @@ _Linked lists are implemented with basic functionalities to avoid using language
     Traversing and deleting from a linked list also takes O(N) time each.
 
 **[Back To Top](#navigation)**
+
+---
+
+## **Graph**
+
+**[Python Implementation](./Graph/Graph.py)**
 
 ---

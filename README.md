@@ -37,7 +37,7 @@ Some coding problems to practice & review for interviews
   4. [MergeTwoSortedLists](#merge-two-sorted-list)
   5. [RemoveDuplicate](#remove-duplicate)
 - [Graph](#graph)
-  1. BreadthFirstSearch
+  1. [BreadthFirstSearch](#breadth-first-search)
   2. DepthFirstSearch
   3. ShortestPath
   4. HamiltonPath
@@ -1218,5 +1218,44 @@ _Linked lists are implemented with basic functionalities to avoid using language
 ## **Graph**
 
 **[Python Implementation](./Graph/Graph.py)**
+
+---
+
+- ## Breadth First Search
+
+- ### Problem Statement
+
+  Implement a BFS.
+
+- ### Solution
+
+  Since BFS relies heavily on finding neighboring vertices,
+
+  and Adjacency List implementation is more efficient in finding neighbors,
+
+  I will implement BFS insisde Adjacency List based Graph.
+
+  From an arbitrary starting point, print itself, and print its neighbors, then continue to do so in the next arbitrary neighbor.
+
+  In case of cycle, keep track of visited, and skip if visited.
+
+  - #### Path to the source codes that solve the problem
+
+    BFS has been implemented as one of the methods in ListGraph class:
+
+    [Graph.py](./Graph/Graph.py)
+
+    Driver:
+
+    [BFS.py](./Graph/BFS.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(|V|+|E|)
+
+    For every V vertices, perform O(1) operations (find it in adj list, mark it, enqueue, dequeue ) => O(|V|)
+    Traverse |E| total because for each vertex, traverse to all its un-visited neighbors (|V|*|neighbors| = |E|)
+
+**[Back To Top](#navigation)**
 
 ---

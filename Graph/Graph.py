@@ -17,10 +17,9 @@ basic operations:
 - remove edge
 '''
 
+
 # Graph using Adjacency Matrix
 # By default, Weighted and Directed, but can be configured using constructor
-
-
 class MatrixGraph:
 
     def __init__(self, weighted=True, directed=True):
@@ -99,37 +98,9 @@ class MatrixGraph:
             output += '\n'
         return output
 
-# temporary driver for Adjacency Matrix Graph
 
-
-def testMatrixGraph():
-    graph = MatrixGraph(directed=False)
-    graph.addVertex('a')
-    graph.addVertex('b')
-    graph.addEdge('a', 'b')
-    graph.addVertex('c')
-    graph.addEdge('b', 'c')
-    graph.addEdge('a', 'c')
-    print(graph)
-    graph.removeEdge('b', 'c')
-    print(graph)
-    graph.removeVertex('c')
-    print(graph)
-    graph.addVertex('c')
-    print(graph)
-    graph.addEdge('a', 'c', 2)
-    print(graph)
-    graph.clearEdge()
-    print(graph)
-    try:
-        graph.removeVertex('d')
-    except Exception as e:
-        print(e)
-
-
-testMatrixGraph()
-
-
+# Graph using Adjacency List
+# By default, Weighted and Directed, but can be configured using constructor
 class ListGraph:
 
     def __init__(self, weighted=True, directed=True):
@@ -205,6 +176,34 @@ class ListGraph:
     def clearEdge(self):
         self.__adjList = [[]]*self.__numVertex
 
+    def BFS(self, vertex=None):
+        visited = []
+        queue = []      # use enqueue, dequeue
+        if vertex is None:
+            vertex = self.__vertices[0]
+        # add first vertex to visited and enqueue
+        if vertex not in visited:
+            visited.append(vertex)
+            queue.append(vertex)
+            # while there's vertex to traverse
+            while queue:
+                for neighbor in self.neighbors(queue.pop(0)):
+                    if neighbor not in visited:
+                        visited.append(neighbor)
+                        queue.append(neighbor)
+        return visited
+
+    def neighbors(self, vertex):
+        neighbors = []
+        vIndex = self.__vertices.index(vertex)
+        if self.__weighted:
+            for adj in self.__adjList[vIndex]:
+                neighbors.append(adj[0])
+        else:
+            for adj in self.__adjList[vIndex]:
+                neighbors.append(adj)
+        return neighbors
+
     # utilities
     # print out adjacency list
 
@@ -218,23 +217,3 @@ class ListGraph:
                     output += ", "
             output += '\n'
         return output
-
-
-def testListGraph():
-    graph = ListGraph(directed=False)
-    graph.addVertex('a')
-    graph.addVertex('b')
-    graph.addEdge('a', 'b', 2)
-    graph.addVertex('c')
-    graph.addEdge('a', 'c', 4)
-    graph.addEdge('c', 'b', 3)
-    print(graph)
-    graph.removeEdge('a', 'b')
-    print(graph)
-    graph.removeVertex('a')
-    print(graph)
-    graph.clearEdge()
-    print(graph)
-
-
-testListGraph()

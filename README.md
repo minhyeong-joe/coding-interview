@@ -38,7 +38,7 @@ Some coding problems to practice & review for interviews
   5. [RemoveDuplicate](#remove-duplicate)
 - [Graph](#graph)
   1. [BreadthFirstSearch](#breadth-first-search)
-  2. DepthFirstSearch
+  2. [DepthFirstSearch](#depth-first-search)
   3. ShortestPath
   4. HamiltonPath
 - Binary Tree
@@ -1255,6 +1255,40 @@ _Linked lists are implemented with basic functionalities to avoid using language
 
     For every V vertices, perform O(1) operations (find it in adj list, mark it, enqueue, dequeue ) => O(|V|)
     Traverse |E| total because for each vertex, traverse to all its un-visited neighbors (|V|*|neighbors| = |E|)
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Depth First Search
+
+- ### Problem Statement
+
+  Implement a DFS.
+
+- ### Solution
+
+  Similar to BFS, but instead of queue, use stack.
+
+  visit a vertex, put neighbors in stack, then visit and find neighbors of last vertex in stack.
+
+  The last item will always be vertex reached by "depth".
+
+  - #### Path to the source codes that solve the problem
+
+    DFS has been implemented as one of the methods in ListGraph class:
+
+    [Graph.py](./Graph/Graph.py)
+
+    Driver:
+
+    [DFS.py](./Graph/DFS.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(|V|+|E|)
+
+    Same traversal as BFS, except using stack instead of queue (different order only, so same Time Complexity as BFS)
 
 **[Back To Top](#navigation)**
 

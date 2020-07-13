@@ -193,6 +193,29 @@ class ListGraph:
                         queue.append(neighbor)
         return visited
 
+    def DFS(self, vertex=None):
+        visited = []
+        stack = []
+        # optional. Used to traverse into "first" neighbor in order.
+        reversalStack = []
+        if vertex is None:
+            vertex = self.__vertices[0]
+        # add first vertex to visited and neighbors to the stack
+        visited.append(vertex)
+        stack.append(vertex)
+        while stack:
+            for neighbor in self.neighbors(stack.pop()):
+                if neighbor not in visited:
+                    reversalStack.insert(0, neighbor)
+            for neighbor in reversalStack:
+                stack.append(neighbor)
+            reversalStack.clear()
+            if stack and stack[len(stack)-1] not in visited:
+                visited.append(stack[len(stack)-1])
+        return visited
+
+    # helper function to retrieve neighbors of given vertex
+
     def neighbors(self, vertex):
         neighbors = []
         vIndex = self.__vertices.index(vertex)

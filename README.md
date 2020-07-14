@@ -39,7 +39,7 @@ Some coding problems to practice & review for interviews
 - [Graph](#graph)
   1. [BreadthFirstSearch](#breadth-first-search)
   2. [DepthFirstSearch](#depth-first-search)
-  3. ShortestPath
+  3. [ShortestPath](#shortest-path)
   4. HamiltonPath
 - Binary Tree
   1. FindHeight
@@ -1290,6 +1290,40 @@ _Linked lists are implemented with basic functionalities to avoid using language
 
     Same traversal as BFS, except using stack instead of queue (different order only, so same Time Complexity as BFS)
 
+**[Back To Top](#navigation)**
+
+---
+
+- ## Shortest Path
+
+- ### Problem Statement
+
+  Given a weighted graph, a source vertex and a goal vertex,
+
+  find the shortest distance from the source vertex to the goal vertex.
+
+  Assume there IS a path between the source and the goal.
+
+- ### Solution
+
+  Dijkstra's Algorithm is one of the most commonly used algorithms for finding the shortest path.
+
+  All edges are assumed to have infinite weight in the beginning.
+
+  Starting with source vertex, update the paths to neighbors with the actual weight + distances traveled so far.
+
+  Using minHeap to move onto the next closest vertex and repeat until minHeap is exhausted (AKA all connected edges are updated)
+
+  - #### Path to the source codes that solve the problem
+
+    [Dijkstra.py](./Graph/Dijkstra.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O((|V|+|E|)log|V|) using minHeap,
+
+    Each neighbor loop operation is like BFS, it is O(|V|+|E|) and for each insertion minHeap would take O(log n).
+    
 **[Back To Top](#navigation)**
 
 ---

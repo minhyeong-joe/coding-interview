@@ -176,6 +176,20 @@ class ListGraph:
     def clearEdge(self):
         self.__adjList = [[]]*self.__numVertex
 
+    def getDistance(self, source, destination):
+        if source not in self.__vertices:
+            raise Exception("Given source vertex does not exist")
+        if destination not in self.__vertices:
+            raise Exception("Given destination vertex does not exist")
+        if not self.__weighted:
+            return 1
+        srcIndex = self.__vertices.index(source)
+        for adj in self.__adjList[srcIndex]:
+            if adj[0] == destination:
+                return adj[1]
+        # if there's no edge between src and destination
+        return -1
+
     def BFS(self, vertex=None):
         visited = []
         queue = []      # use enqueue, dequeue

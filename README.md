@@ -76,9 +76,9 @@ Some coding problems to practice & review for interviews
   - peek(): Return data on top without removing it.
   - size(): Return the number of data in the stack.
 
-  [C++ Header](DataStructures/Stack.hpp)
-  
-  [C++ Implementation](DataStructures/Stack.cpp)
+  [**C++ Header**](DataStructures/Stack.hpp)
+
+  [**C++ Implementation**](DataStructures/Stack.cpp)
 
 [Back to Top](#navigation)
 
@@ -94,6 +94,10 @@ Some coding problems to practice & review for interviews
   - dequeue(): Remove and return the first data in queue.
   - peek(): Return the first data without removing it.
   - size(): Return the number of data in the queue.
+
+  [**C++ Header**](DataStructures/Queue.hpp)
+
+  [**C++ Implementation**](DataStructures/Queue.cpp)
 
 [Back to Top](#navigation)
 
@@ -156,12 +160,12 @@ Some coding problems to practice & review for interviews
   - remove(): Remove data from the given index.
   - get(): Return the data at the given index.
 
-  [Java Implementation](./LinkedList/LinkedList.java)
+  [**Java Implementation**](./LinkedList/LinkedList.java)
 
-  [Python Implementation](./LinkedList/LinkedList.py)
+  [**Python Implementation**](./LinkedList/LinkedList.py)
 
-  [C++ Implementation](./LinkedList/LinkedList.cpp)
-  [C++ Header](./LinkedList/LinkedList.h)
+  [**C++ Implementation**](./LinkedList/LinkedList.cpp)
+  [**C++ Header**](./LinkedList/LinkedList.h)
 
 [Back to Top](#navigation)
 
@@ -227,7 +231,7 @@ Some coding problems to practice & review for interviews
   - postOrder(): Retrieve data in post-order traversal manner.
   - levelOrder(): Retrieve data in level-order traversal manner.
 
-  [Java Implementation](BinaryTree/BinaryTree.java)
+  [**Java Implementation**](BinaryTree/BinaryTree.java)
 
 [Back to Top](#navigation)
 

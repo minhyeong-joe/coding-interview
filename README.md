@@ -40,7 +40,7 @@ Some coding problems to practice & review for interviews
   1. [BreadthFirstSearch](#breadth-first-search)
   2. [DepthFirstSearch](#depth-first-search)
   3. [ShortestPath](#shortest-path)
-  4. HamiltonPath
+  4. [EulerianPath](#eulerian-path)
 - Binary Tree
   1. FindHeight
   2. InOrderTraversal
@@ -1323,6 +1323,45 @@ _Linked lists are implemented with basic functionalities to avoid using language
     O((|V|+|E|)log|V|) using minHeap,
 
     Each neighbor loop operation is like BFS, it is O(|V|+|E|) and for each insertion minHeap would take O(log n).
+    
+**[Back To Top](#navigation)**
+
+---
+
+- ## Eulerian Path
+
+- ### Problem Statement
+
+  Eulerian Path is a path through which one visits **EVERY** edge **exactly once**.
+
+  AKA single-stroke or draw-without-lifting-up-the-pen
+
+  Given a connected, undirected, unweighted graph, check if the graph can be drawn in single stroke without lifting up the imaginary pen or repeating the same edge.
+
+- ### Solution
+
+  Eulerian Path has specific properties:
+
+  1. There are exactly 0 or 2 odd degree vertices
+
+  2. All vertices are connected
+
+  This can be easily checked with algorithm,
+
+  (in other words, algorithm does not have to draw all possible permutations to determine if the graph is single stroke-able)
+
+  - #### Path to the source codes that solve the problem
+
+    [EulerianPath.py](Graph/EulerianPath.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(|V|^2)
+
+  The solution uses BFS to retrieve all vertices,
+
+  then for each vertex, find number of degrees using neighbors() which iterates over each adjacent edge, so in worst case, it may have |V|-1 edges.
+
     
 **[Back To Top](#navigation)**
 

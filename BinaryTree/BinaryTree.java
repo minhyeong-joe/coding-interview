@@ -1,246 +1,326 @@
 package BinaryTree;
 
-/**
- * BinaryTree Technically Binary Tree is family of data structures and this is
- * an implementation of Binary Search Tree The elements are organized in a way
- * such that: 1. left node is less than parent node 2. right node is greater
- * than parent node 3. No duplicate value is allowed
- */
-public class BinaryTree<T extends Comparable<T>> {
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Queue;
+import java.util.Stack;
 
-    /**
-     * Node represents each item within the tree
-     */
-    class Node<T extends Comparable<T>> {
-        private T value;
-        private Node<T> left;
-        private Node<T> right;
+//   Implementation of Balanced Binary Search Tree: 
+//   1. At most two child nodes 
+//   2. Left node is less than parent node, right node is greater than parent node 
+//   3. No duplicate value is allowed 
+//   4. left and right subtree's heights differ by at most one (recursively apply the same to all subtrees)
+public class BinaryTree<K extends Comparable<K>, V> {
 
-        Node(T value) {
+    // Node represents each item in tree.
+    // It holds key and value pair
+    private class Node {
+        private K key;
+        private V value;
+        private Node left;
+        private Node right;
+
+        Node(K key, V value) {
+            this.key = key;
             this.value = value;
             this.left = null;
             this.right = null;
         }
 
-        public T getValue() {
+        // getters and setters use private property names and method overloading for
+        // ease of use
+        // public getters
+        public K key() {
+            return this.key;
+        }
+
+        public V value() {
             return this.value;
         }
 
-        public void setValue(T value) {
-            this.value = value;
-        }
-
-        public Node<T> getLeft() {
+        public Node left() {
             return this.left;
         }
 
-        public Node<T> getRight() {
+        public Node right() {
             return this.right;
         }
 
-        public void setLeft(Node<T> node) {
+        // public setters
+        public void key(K key) {
+            this.key = key;
+        }
+
+        public void value(V value) {
+            this.value = value;
+        }
+
+        public void left(Node node) {
             this.left = node;
         }
 
-        public void setRight(Node<T> node) {
+        public void right(Node node) {
             this.right = node;
         }
+
     }
 
-    private Node<T> root;
+    private Node root;
 
+    // constructor
     BinaryTree() {
         this.root = null;
     }
 
-    /**
-     * insertion Start from root, recursively find appropriate place for newValue by
-     * comparing values
-     * 
-     * @param value New value to be inserted into Binary Tree
-     */
-    public void insert(T value) {
-        this.root = insert(value, this.root);
-    }
-
-    /**
-     * private helper recursive function for Insertion
-     * 
-     * @param value   New value to be inserted into Binary Tree
-     * @param current Reference to current node to compare value to
-     * @return Node<T> Root with new inserted node
-     */
-    private Node<T> insert(T value, Node<T> current) {
-        if (current == null) {
-            return new Node<T>(value);
+    // public insert method.
+    // checks if key exists, returns false if duplicate key found, else call insert
+    // recursion and return true.
+    public boolean insert(K key, V value) {
+        if (search(key, this.root) != null) {
+            return false;
         }
-        if (value.compareTo(current.getValue()) < 0) {
-            current.setLeft(insert(value, current.getLeft()));
-        } else if (value.compareTo(current.getValue()) > 0) {
-            current.setRight(insert(value, current.getRight()));
+        Node newNode = new Node(key, value);
+        this.root = insert(newNode, this.root);
+        return true;
+    }
+
+    // private helper: recursive insert
+    private Node insert(Node newNode, Node parent) {
+        // BASE CASE: if empty place, return newNode
+        if (parent == null) {
+            return newNode;
         }
-        return current;
+        // if new key < parent key, then insert to parent's left
+        // if new key > parent key, then insert to parent's right
+        if (newNode.key().compareTo(parent.key()) < 0) {
+            parent.left(insert(newNode, parent.left()));
+        } else if (newNode.key().compareTo(parent.key()) > 0) {
+            parent.right(insert(newNode, parent.right()));
+        }
+        return parent;
     }
 
-    /**
-     * Search the target value within tree and return the node
-     * 
-     * @param target target value
-     * @return Node<T>
-     * @return null if not found
-     */
-    public Node<T> search(T target) {
-        return search(target, this.root);
+    // public search method
+    // given a key, return the value if key exists, else return null
+    public V search(K key) {
+        return search(key, this.root).value();
     }
 
-    /**
-     * Private helper recursive function for search
-     * 
-     * @param target target value
-     * @param node   current compared node reference
-     * @return Node<T>
-     */
-    private Node<T> search(T target, Node<T> node) {
+    // private helper: recursive search
+    // return null if not found, return node if found
+    private Node search(K key, Node node) {
+        // if traversed out of range, not found
         if (node == null) {
             return null;
         }
-        if (target.compareTo(node.getValue()) == 0) {
+        // found the node with key value
+        if (key.compareTo(node.key()) == 0) {
             return node;
         }
-        if (target.compareTo(node.getValue()) < 0) {
-            return search(target, node.getLeft());
+        // if key is less, recursively search left side
+        if (key.compareTo(node.key()) < 0) {
+            return search(key, node.left());
         }
-        if (target.compareTo(node.getValue()) > 0) {
-            return search(target, node.getRight());
+        // if key is greater, recursively search right side
+        if (key.compareTo(node.key()) > 0) {
+            return search(key, node.right());
         }
         return null;
     }
 
-    /**
-     * Remove the target value from the tree
-     * 
-     * @param target target value to remove from tree
-     */
-    public void remove(T target) {
-        Node<T> nodeToDelete = search(target);
+    // public remove method, remove node by key
+    // return true if removal is successful, return false if removal fails (key does
+    // not exist)
+    public boolean remove(K key) {
+        Node nodeToDelete = search(key, this.root);
         if (nodeToDelete == null) {
-            return;
+            return false;
         }
-        Node<T> parent = findParent(nodeToDelete, this.root);
+        Node parent = findParent(nodeToDelete, this.root);
         // if it's leaf node, simply remove it
-        if (nodeToDelete.getLeft() == null && nodeToDelete.getRight() == null) {
+        if (nodeToDelete.left() == null && nodeToDelete.right() == null) {
             if (parent == null) {
                 this.root = null;
-                return;
-            }
-            if (parent.getLeft() == nodeToDelete) {
-                parent.setLeft(null);
+            } else if (parent.left() == nodeToDelete) {
+                parent.left(null);
             } else {
-                parent.setRight(null);
+                parent.right(null);
             }
         }
         // if it's not leaf node, and has only either child, move all descedents up
-        else if (nodeToDelete.getLeft() != null && nodeToDelete.getRight() == null) {
+        else if (nodeToDelete.left() != null && nodeToDelete.right() == null) {
             if (parent == null) {
-                this.root = nodeToDelete.getLeft();
-                return;
-            }
-            if (parent.getLeft() == nodeToDelete) {
-                parent.setLeft(nodeToDelete.getLeft());
+                this.root = nodeToDelete.left();
+            } else if (parent.left() == nodeToDelete) {
+                parent.left(nodeToDelete.left());
             } else {
-                parent.setRight(nodeToDelete.getLeft());
+                parent.right(nodeToDelete.left());
             }
-        } else if (nodeToDelete.getLeft() == null && nodeToDelete.getRight() != null) {
+        } else if (nodeToDelete.left() == null && nodeToDelete.right() != null) {
             if (parent == null) {
-                this.root = nodeToDelete.getRight();
-                return;
-            }
-            if (parent.getLeft() == nodeToDelete) {
-                parent.setLeft(nodeToDelete.getRight());
+                this.root = nodeToDelete.right();
+            } else if (parent.left() == nodeToDelete) {
+                parent.left(nodeToDelete.right());
             } else {
-                parent.setRight(nodeToDelete.getRight());
+                parent.right(nodeToDelete.right());
             }
         }
-        // if nodeToDelete is not leaf and has both children, then take the smallest
-        // from right side
+        // if nodeToDelete is not leaf and has both children,
+        // then take the smallest from right side
+        // put that in nodeToDelete's position, then remove nodeToDelete and original
+        // smallest node
         else {
-            T min = findMin(nodeToDelete.getRight());
-            // make a copy of this node, and delete the one in the node
-            Node<T> minNode = new Node<T>(min);
-            remove(min);
-            minNode.setLeft(nodeToDelete.getLeft());
-            minNode.setRight(nodeToDelete.getRight());
+            Node minNode = findMin(nodeToDelete.right());
+            Node copiedMinNode = new Node(minNode.key(), minNode.value());
+            remove(minNode.key());
+            copiedMinNode.left(nodeToDelete.left());
+            copiedMinNode.right(nodeToDelete.right());
             if (parent == null) {
-                this.root = minNode;
-                return;
-            }
-            if (parent.getLeft() == nodeToDelete) {
-                parent.setLeft(minNode);
+                this.root = copiedMinNode;
+            } else if (parent.left() == nodeToDelete) {
+                parent.left(copiedMinNode);
             } else {
-                parent.setRight(minNode);
+                parent.right(copiedMinNode);
+            }
+        }
+        return true;
+    }
+
+    // ** Traversals **
+    // Include: In-order (left, root, right), Pre-order (root, left, right),
+    // Post-order (left, right, root), Level-order (BFS)
+
+    // In-order traversal
+    public ArrayList<Node> inOrder() {
+        Stack<Node> inOrderStack = new Stack<>();
+        ArrayList<Node> arr = new ArrayList<>();
+        Node it_ptr;
+        // start stack with root node
+        inOrderStack.push(this.root);
+        while (!inOrderStack.empty()) {
+            it_ptr = inOrderStack.peek();
+            // traverse as deep to the left
+            while (it_ptr.left() != null && !arr.contains(it_ptr.left())) {
+                it_ptr = it_ptr.left();
+                inOrderStack.push(it_ptr);
+            }
+            arr.add(inOrderStack.pop());
+            // add right child node to top of stack for next iteration
+            if (it_ptr.right() != null) {
+                inOrderStack.push(it_ptr.right());
+            }
+        }
+        return arr;
+    }
+
+    // Pre-order Traversal
+    public ArrayList<Node> preOrder() {
+        Stack<Node> preOrderStack = new Stack<>();
+        ArrayList<Node> arr = new ArrayList<>();
+        Node it_ptr;
+        // start stack with root node
+        preOrderStack.push(this.root);
+        while (!preOrderStack.empty()) {
+            it_ptr = preOrderStack.peek();
+            // add root
+            if (!arr.contains(it_ptr)) {
+                arr.add(it_ptr);
+            }
+            // traverse as deep to the left, add to arr as it traverses
+            while (it_ptr.left() != null && !arr.contains(it_ptr.left())) {
+                it_ptr = it_ptr.left();
+                preOrderStack.push(it_ptr);
+                // add left
+                arr.add(it_ptr);
+            }
+            preOrderStack.pop();
+            // add right child node to top of stack for next iteration
+            if (it_ptr.right() != null) {
+                preOrderStack.push(it_ptr.right());
+            }
+        }
+        return arr;
+    }
+
+    // Post-order Traversal
+    public ArrayList<Node> postOrder() {
+        Stack<Node> postOrderStack = new Stack<>();
+        ArrayList<Node> arr = new ArrayList<>();
+        Node it_ptr;
+        // start stack with root node
+        postOrderStack.push(this.root);
+        while (!postOrderStack.empty()) {
+            it_ptr = postOrderStack.peek();
+            while ((it_ptr.left() != null && !arr.contains(it_ptr.left()))
+                    || (it_ptr.right() != null && !arr.contains(it_ptr.right()))) {
+                while (it_ptr.left() != null && !arr.contains(it_ptr.left())) {
+                    it_ptr = it_ptr.left();
+                    postOrderStack.add(it_ptr);
+                }
+                if (it_ptr.right() != null && !arr.contains(it_ptr.right())) {
+                    it_ptr = it_ptr.right();
+                    postOrderStack.add(it_ptr);
+                }
+            }
+            arr.add(postOrderStack.pop());
+        }
+        return arr;
+    }
+
+    // Level-order traversal
+    public ArrayList<Node> levelOrder() {
+        Queue<Node> levelQueue = new ArrayDeque<>();
+        ArrayList<Node> arr = new ArrayList<>();
+        Node it_ptr;
+        // queue start with root node
+        levelQueue.add(this.root);
+        while (!levelQueue.isEmpty()) {
+            it_ptr = levelQueue.peek();
+            arr.add(levelQueue.remove());
+            if (it_ptr.left() != null) {
+                levelQueue.add(it_ptr.left());
+            }
+            if (it_ptr.right() != null) {
+                levelQueue.add(it_ptr.right());
+            }
+        }
+        return arr;
+    }
+
+    // print that takes in the array list created by different traversal methods
+    public void print(ArrayList<Node> arr) {
+        for (Node node : arr) {
+            System.out.print("{" + node.key() + ":" + node.value() + "}");
+            Node parent = findParent(node, this.root);
+            if (parent == null) {
+                System.out.println(" (ROOT)");
+            } else {
+                String leftRight = node.key().compareTo(parent.key()) < 0 ? "LEFT" : "RIGHT";
+                System.out.println(" (" + leftRight + " CHILD of {" + parent.key() + ":" + parent.value() + "})");
             }
         }
     }
 
-    /**
-     * Simple print
-     */
-    public void print() {
-        System.out.print(print(this.root, new StringBuilder(""), null, null));
-    }
-
-    /**
-     * Private helper recursion for print()
-     * 
-     * @param current Current node
-     * @param sb      StringBuilder to accumulate string output
-     * @param parent  parent node for display purpose
-     * @param child   left or right child for display purpose
-     * @return StringBuilder final string output
-     */
-    private StringBuilder print(Node<T> current, StringBuilder sb, T parent, String child) {
-        if (current != null) {
-            sb.append(current.getValue());
-            if (parent != null) {
-                sb.append(" (" + child + " child of " + parent + ")");
-            } else {
-                sb.append(" (ROOT)");
-            }
-            sb.append("\n");
-
-            print(current.getLeft(), sb, current.getValue(), "left");
-            print(current.getRight(), sb, current.getValue(), "right");
-        }
-        return sb;
-    }
-
-    public T findParent(T target) {
-        Node<T> child = search(target);
-        Node<T> parent = findParent(child, this.root);
-        return parent == null ? null : parent.getValue();
-    }
-
-    private Node<T> findParent(Node<T> child, Node<T> parent) {
+    private Node findParent(Node child, Node parent) {
         if (child == null || parent == null) {
             return null;
         }
-        if (parent.getLeft() == child || parent.getRight() == child) {
+        if (parent.left() == child || parent.right() == child) {
             return parent;
         }
-        if (child.getValue().compareTo(parent.getValue()) < 0) {
-            return findParent(child, parent.getLeft());
+        if (child.key().compareTo(parent.key()) < 0) {
+            return findParent(child, parent.left());
         }
-        if (child.getValue().compareTo(parent.getValue()) > 0) {
-            return findParent(child, parent.getRight());
+        if (child.key().compareTo(parent.key()) > 0) {
+            return findParent(child, parent.right());
         }
         return null;
     }
 
-    private T findMin(Node<T> node) {
-        T min = node.getValue();
-        while (node.getLeft() != null) {
-            min = node.getLeft().getValue();
-            node = node.getLeft();
+    private Node findMin(Node node) {
+        Node min = node;
+        while (min.left() != null) {
+            min = min.left();
         }
         return min;
     }

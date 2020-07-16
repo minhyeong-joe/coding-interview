@@ -1370,8 +1370,12 @@ _Linked lists are implemented with basic functionalities to avoid using language
 
 ## **Binary Tree**
 
-**Technically, implementation of Binary Search Tree**
-
 [Java Implementation](BinaryTree/BinaryTree.java)
+
+*The implementation is a balanced Binary Search Tree*
+- At most two child nodes
+- Smaller value to the left and larger value to the right of parent
+- no duplicate keys
+- left and right subtree's heights differ by at most one (recursively apply the same to all subtrees)
 
 ---

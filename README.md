@@ -1356,11 +1356,11 @@ _Linked lists are implemented with basic functionalities to avoid using language
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-  O(|V|^2)
+    O(|V|^2)
 
-  The solution uses BFS to retrieve all vertices,
+    The solution uses BFS to retrieve all vertices,
 
-  then for each vertex, find number of degrees using neighbors() which iterates over each adjacent edge, so in worst case, it may have |V|-1 edges.
+    then for each vertex, find number of degrees using neighbors() which iterates over each adjacent edge, so in worst case, it may have |V|-1 edges.
 
     
 **[Back To Top](#navigation)**

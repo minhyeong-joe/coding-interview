@@ -4,6 +4,14 @@ Some coding problems to practice & review for interviews
 
 # Navigation
 
+- Data Structures
+  1. [Stack](#stack)
+  2. [Queue](#queue)
+  3. [Heap](#heap)
+  4. [Hashtable](#hashtable)
+  5. [LinkedList](#linkedlist)
+  6. [Graph](#graph-1)
+  7. [Binary Search Tree](#binary-search-tree)
 - [Search and Sort](#search-and-sort)
   1. [BubbleSort](#bubble-sort)
   2. [InsertionSort](#insertion-sort)
@@ -36,17 +44,13 @@ Some coding problems to practice & review for interviews
   3. [ReverseSinglyLinkedList](#reverse-singly-linked-list)
   4. [MergeTwoSortedLists](#merge-two-sorted-list)
   5. [RemoveDuplicate](#remove-duplicate)
-- [Graph](#graph)
+- [Graph](#graph-2)
   1. [BreadthFirstSearch](#breadth-first-search)
   2. [DepthFirstSearch](#depth-first-search)
   3. [ShortestPath](#shortest-path)
   4. [EulerianPath](#eulerian-path)
 - [Binary Tree](#binary-tree)
-  1. BinarySearchTree
-  2. InOrderTraversal
-  3. PreOrderTraversal
-  4. PostOrderTraversal
-  5. MorseCode
+  1. MorseCodeLookup
 - Number and Math
   1. IsPowerOfTwo
   2. FindPrimeGivenUpperBound
@@ -56,6 +60,178 @@ Some coding problems to practice & review for interviews
   6. SieveOfEratosthenes
 
 # Problems
+
+## **Data Structures**
+
+---
+
+- ## Stack
+
+  **Traits:**
+  - Last-In-First-Out (LIFO): Data inserted last is removed first.
+
+  **Methods:**
+  - push(): Add data to the top of stack.
+  - pop(): Remove data on top and return that data.
+  - peek(): Return data on top without removing it.
+  - size(): Return the number of data in the stack.
+
+  [C++ Header](DataStructures/Stack.hpp)
+  
+  [C++ Implementation](DataStructures/Stack.cpp)
+
+[Back to Top](#navigation)
+
+---
+
+- ## Queue
+
+  **Traits:**
+  - First-In-First-Out (FIFO): Data inserted first is removed first.
+
+  **Methods:**
+  - enqueue(): Insert data to the end of queue.
+  - dequeue(): Remove and return the first data in queue.
+  - peek(): Return the first data without removing it.
+  - size(): Return the number of data in the queue.
+
+[Back to Top](#navigation)
+
+---
+
+- ## Heap
+
+  **Traits:**
+  - Binary Tree visualization.
+  - Parent node is always either smaller/greater than child nodes.
+  - Finding min/max = Returning the Root, so it is O(1).
+  - Application: Priority Queue, Heap Sort.
+
+  **Methods:**
+  - insert(): Insert data and internally "heapify" to satisfy heap properties.
+  - remove(): Remove data and internally "heapify" to satisfy heap properties.
+  - min()/max(): Return the root element.
+
+[Back to Top](#navigation)
+
+---
+
+- ## Hashtable
+
+  **Traits:**
+  - Data is stored into the hashed index.
+  - Hash function is used to convert data key into valid index.
+  - Key -> Hash -> O(1) to retrieve data
+  - Collision handlings:
+    - Linear Probing: Insert into next available index.
+    - Quadratic Probing: Insert into next index that is square of collided index.
+    - Double Hasing: Apply second hashing for collision.
+    - Chaining: Each index has linked list of collided data.
+
+  **Methods:**
+  - insert(): Hash and insert data into proper index.
+  - remove(): Hash and remove data from proper index.
+  - get(): Hash and find data from the proper index.
+
+[Back to Top](#navigation)
+
+---
+
+- ## LinkedList
+
+  **Traits:**
+  - Each data is stored as node and collection of data is connected linearly.
+  - Singly-Linked: Node has pointer to next node.
+  - Doubly-Linked: Node has pointers to prev node and next node.
+  - Traversal is in linear time
+  - Insertion/Deletion at the head takes O(1)
+  - Insertion, Deletion are generally better than array as it doesn't require data shifting.
+
+  **Methods:**
+  - insertAtHead(): Insert new data in the beginning of list.
+  - insertAtEnd(): Insert new data at the end of list.
+  - insert(): Insert new data at given index.
+  - removeAtHead(): Remove data from the beginning of list.
+  - removeAtEnd(): Remove data from the end of list.
+  - remove(): Remove data from the given index.
+  - get(): Return the data at the given index.
+
+  [Java Implementation](./LinkedList/LinkedList.java)
+
+  [Python Implementation](./LinkedList/LinkedList.py)
+
+  [C++ Implementation](./LinkedList/LinkedList.cpp)
+  [C++ Header](./LinkedList/LinkedList.h)
+
+[Back to Top](#navigation)
+
+---
+
+- ## Graph
+
+  **Traits:**
+  - Each data is stored in vertex connected by edges.
+  - Edge connection relations are stored commonly using:
+    - Adjacency Matrix: |V|x|V| table that has 0 to indicate no edge, other numbers to indicate weight between vertices u and v.
+      - O(|V|^2) Space.
+      - O(1) to check if u and v has edge.
+      - O(|V|) to find all neighbors of a vertex.
+    - Adjacency List: Each vertex keeps list of its neighbors along with weights.
+      - O(|E|) Space.
+      - O(deg(u)) to check if u and v has edge.
+      - O(deg(u)) to find all neighbors of a vertex u.
+  - Configurations:
+    - Weighted vs Un-weighted
+      - Weighted: Each edge has different weight (or distance).
+      - Un-weighted: All edges have the same weight (or distance of 1).
+    - Directed vs Un-directed
+      - Directed: Edge has direction. u->v, but not necessarily v->u.
+      - Un-directed: Edge has no direction. u->v, then v->u.
+
+  **Methods:**
+  - addVertex(): Add a new vertex with given data.
+  - removeVertex(): Remove a vertex from the graph.
+  - addEdge(): Add an edge between two vertices with given weights.
+  - removeEdge(): Remove an edge between two vertices.
+  - BFS(): Return data in the Breadth-First-Search manner.
+  - DFS(): Return data in the Depth-First-Search manner.
+
+  **[Python Implementation](./Graph/Graph.py)**
+
+[Back to Top](#navigation)
+
+---
+
+- ## Binary Search Tree
+
+  **Traits:**
+  - At most two child nodes.
+  - Left child is always less than the parent.
+  - Right child is always greater than the parent.
+  - No duplicate data allowed.
+  - Balanced: Left and right subtrees differ in heights by no more than 1.
+  - Searching in balanced BST takes O(log N).
+  - Insertion and deletion both take O(log N).
+  - Traversals:
+    - In-order: Left-Root-Right
+    - Pre-order: Root-Left-Right
+    - Post-order: Left-Right-Root
+    - Level-order: Each level from left to right
+
+  **Methods:**
+  - insert(): Add new data into appropriate position.
+  - remove(): Remove data from the tree.
+  - search(): Retrieve data with the given key.
+  - inOrder(): Retrieve data in in-order traversal manner.
+  - preOrder(): Retrieve data in pre-order traversal manner.
+  - postOrder(): Retrieve data in post-order traversal manner.
+  - levelOrder(): Retrieve data in level-order traversal manner.
+
+  [Java Implementation](BinaryTree/BinaryTree.java)
+
+[Back to Top](#navigation)
+
+---
 
 ## **Search and Sort**
 

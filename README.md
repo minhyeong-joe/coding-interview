@@ -41,11 +41,12 @@ Some coding problems to practice & review for interviews
   2. [DepthFirstSearch](#depth-first-search)
   3. [ShortestPath](#shortest-path)
   4. [EulerianPath](#eulerian-path)
-- Binary Tree
-  1. FindHeight
+- [Binary Tree](#binary-tree)
+  1. BinarySearchTree
   2. InOrderTraversal
   3. PreOrderTraversal
   4. PostOrderTraversal
+  5. MorseCode
 - Number and Math
   1. IsPowerOfTwo
   2. FindPrimeGivenUpperBound
@@ -1364,5 +1365,13 @@ _Linked lists are implemented with basic functionalities to avoid using language
 
     
 **[Back To Top](#navigation)**
+
+---
+
+## **Binary Tree**
+
+**Technically, implementation of Binary Search Tree**
+
+[Java Implementation](BinaryTree/BinaryTree.java)
 
 ---

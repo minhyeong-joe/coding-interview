@@ -12,7 +12,7 @@ Some coding problems to practice & review for interviews
   5. [LinkedList](#linkedlist)
   6. [Graph](#graph)
   7. [Binary Search Tree](#binary-search-tree)
-- [Search and Sort](#search-and-sort)
+- Sorting
   1. [BubbleSort](#bubble-sort)
   2. [InsertionSort](#insertion-sort)
   3. [MergeSort](#merge-sort)
@@ -20,7 +20,7 @@ Some coding problems to practice & review for interviews
   5. [RadixSort (and counting sort)](#radix-sort)
   6. [BucketSort](#bucket-sort)
   7. [BinarySearch](#binary-search)
-- [String](#string)
+- String
   1. [IsPalindrome](#is-palindrome)
   2. [IsAnagram](#is-anagram)
   3. [RemoveAllChars](#remove-all-chars)
@@ -30,7 +30,7 @@ Some coding problems to practice & review for interviews
   7. [AllPermutations](#all-permutations)
   8. [LongestSubPalindrome](#longest-sub-palindrome)
   9. [LongestCommonSubsequence](#longest-common-subsequence)
-- [Array](#array)
+- Array
   1. [FindMissing](#find-missing)
   2. [FindDuplicate](#find-duplicate)
   3. [FindSecondMax](#find-second-max)
@@ -38,18 +38,18 @@ Some coding problems to practice & review for interviews
   5. [SubsetSum](#subset-sum)
   6. [ReverseInPlace](#reverse-in-place)
   7. [Partition](#partition)
-- [LinkedList](#linked-list)
+- LinkedList
   1. [MiddleElementSinglePass](#middle-element-single-pass)
   2. [NthFromLast](#nth-from-last)
   3. [ReverseSinglyLinkedList](#reverse-singly-linked-list)
   4. [MergeTwoSortedLists](#merge-two-sorted-list)
   5. [RemoveDuplicate](#remove-duplicate)
-- [Graph](#graph-1)
+- Graph
   1. [BreadthFirstSearch](#breadth-first-search)
   2. [DepthFirstSearch](#depth-first-search)
   3. [ShortestPath](#shortest-path)
   4. [EulerianPath](#eulerian-path)
-- [Binary Tree](#binary-tree)
+- Binary Tree
   1. MorseCodeLookup
 - Number and Math
   1. IsPowerOfTwo
@@ -140,6 +140,10 @@ Some coding problems to practice & review for interviews
   - insert(): Hash and insert data into proper index.
   - remove(): Hash and remove data from proper index.
   - get(): Hash and find data from the proper index.
+
+  [**C++ Header**](DataStructures/Hashtable.hpp)
+
+  [**C++ Implementation**](DataStructures/Hashtable.cpp)
 
 [Back to Top](#navigation)
 
@@ -241,7 +245,7 @@ Some coding problems to practice & review for interviews
 
 ---
 
-## **Search and Sort**
+## **Sorting**
 
 ---
 
@@ -426,6 +430,8 @@ Some coding problems to practice & review for interviews
 - ## Binary Search
 
 - ### Problem Statement
+
+  Binary Search is not a sorting technique, but "depends" on sorting.
 
   Binary Search utilizes **Sorted** list to search for a target within the given list.
 
@@ -1159,8 +1165,6 @@ Some coding problems to practice & review for interviews
 
 ## **Linked List**
 
-_Linked lists are implemented with basic functionalities to avoid using language built-in data structure_
-
 [Java Implementation](./LinkedList/LinkedList.java)
 
 [Python Implementation](./LinkedList/LinkedList.py)
@@ -1554,12 +1558,6 @@ _Linked lists are implemented with basic functionalities to avoid using language
 
 ## **Binary Tree**
 
-[Java Implementation](BinaryTree/BinaryTree.java)
-
-*The implementation is a balanced Binary Search Tree*
-- At most two child nodes
-- Smaller value to the left and larger value to the right of parent
-- no duplicate keys
-- left and right subtree's heights differ by at most one (recursively apply the same to all subtrees)
+[Java Implementation](BinaryTree/BinaryTree.java) of Balanced Binary Search Tree
 
 ---

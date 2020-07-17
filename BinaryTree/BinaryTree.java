@@ -64,7 +64,6 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
 
     }
-
     private Node root;
 
     // constructor
@@ -81,6 +80,7 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
         Node newNode = new Node(key, value);
         this.root = insert(newNode, this.root);
+        balance(this.root);
         return true;
     }
 
@@ -183,6 +183,7 @@ public class BinaryTree<K extends Comparable<K>, V> {
                 parent.right(copiedMinNode);
             }
         }
+        balance(this.root);
         return true;
     }
 
@@ -323,6 +324,107 @@ public class BinaryTree<K extends Comparable<K>, V> {
             min = min.left();
         }
         return min;
+    }
+
+    private void rotateRight(Node node) {
+        Node parent = findParent(node, this.root);
+        Node leftNode = node.left();
+        // if rotated node is the root
+        if (parent == null) {
+            this.root = leftNode;
+        } else if (parent.left() == node) {
+            parent.left(leftNode);
+        } else {
+            parent.right(leftNode);
+        }
+        node.left(null);
+        // if left of rotated node had right child (which is always less than rotated node), attach rotated node as right of this right child
+        if (leftNode.right() != null) {
+            if (node.right() != null) {
+                node.left(leftNode.right());
+                leftNode.right(node);
+            } else {
+                leftNode.right().right(node);
+            }
+        } else {
+            leftNode.right(node);
+        }
+    }
+
+    private void rotateLeft(Node node) {
+        Node parent = findParent(node, this.root);
+        Node rightNode = node.right();
+        // if rotated node is the root
+        if (parent == null) {
+            this.root = rightNode;
+        } else if (parent.left() == node) {
+            parent.left(rightNode);
+        } else {
+            parent.right(rightNode);
+        }
+        node.right(null);
+        // if left of rotated node had right child (which is always less than rotated node), attach rotated node as right of this right child
+        if (rightNode.left() != null) {
+            if (node.left() != null) {
+                node.right(rightNode.left());
+                rightNode.left(node);
+            } else {
+                rightNode.left().left(node);
+            }
+        } else {
+            rightNode.left(node);
+        }
+    }
+
+    private int height(Node node, int h) {
+        if (node == null) {
+            return h - 1;
+        }
+        if (node.left() == null && node.right() == null) {
+            return h;
+        }
+        // if left node is longer or right node is null, get the height of left side
+        if ((node.left() != null && node.left().left() != null && node.left().right() != null) || node.right() == null) {
+            return height(node.left(), h+1);
+        } else {
+            return height(node.right(), h+1);
+        }
+    }
+
+    private void balance(Node node) {
+        if (node == null) {
+            return;
+        }
+        balance(node.left());
+        balance(node.right());
+        int leftHeight = height(node.left(), 1);
+        int rightHeight = height(node.right(), 1);
+        // 4 cases to consider:
+        // 1. leftHeight > rightHeight + 1, AND left's leftHeight > left's rightHeight
+        // 2. leftHeight > rightHeight + 1, AND left's leftHeight < left's rightHeight
+        // 3. leftHeight + 1 < rightHeight, AND right's leftHeight < right's rightHeight
+        // 4. leftHeight + 1 < rightHeight, AND right's leftHeight > right's rightHeight
+        if (leftHeight > rightHeight + 1) {
+            int leftLeftHeight = height(node.left().left(), 1);
+            int leftRightHeight = height(node.left().right(), 1);
+            if (leftLeftHeight >= leftRightHeight) {
+                rotateRight(node);
+            } else {
+                rotateLeft(node.left());
+                rotateRight(node);
+            }
+        } else if (leftHeight + 1 < rightHeight) {
+            int rightLeftHeight = height(node.right().left(), 1);
+            int rightRightHeight = height(node.right().right(), 1);
+            if (rightLeftHeight <= rightRightHeight) {
+                rotateLeft(node);
+            } else {
+                rotateRight(node.right());
+                rotateLeft(node);
+            }
+        } else {
+            return;
+        }
     }
 
 }

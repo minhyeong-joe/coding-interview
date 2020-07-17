@@ -11,7 +11,7 @@ Some coding problems to practice & review for interviews
   4. [Hashtable](#hashtable)
   5. [LinkedList](#linkedlist)
   6. [Graph](#graph)
-  7. [Binary Search Tree](#binary-search-tree)
+  7. [Binary Search Tree](#binary-search-tree-avl-tree)
 - Sorting
   1. [BubbleSort](#bubble-sort)
   2. [InsertionSort](#insertion-sort)
@@ -214,14 +214,14 @@ Some coding problems to practice & review for interviews
 
 ---
 
-- ## Binary Search Tree
+- ## Binary Search Tree (AVL-Tree)
 
   **Traits:**
   - At most two child nodes.
   - Left child is always less than the parent.
   - Right child is always greater than the parent.
   - No duplicate data allowed.
-  - Balanced: Left and right subtrees differ in heights by no more than 1.
+  - (AVL-Tree) Balanced: Left and right subtrees differ in heights by no more than 1.
   - Searching in balanced BST takes O(log N).
   - Insertion and deletion both take O(log N).
   - Traversals:
@@ -231,8 +231,8 @@ Some coding problems to practice & review for interviews
     - Level-order: Each level from left to right
 
   **Methods:**
-  - insert(): Add new data into appropriate position.
-  - remove(): Remove data from the tree.
+  - insert(): Add new data into appropriate position and rebalance.
+  - remove(): Remove data from the tree and rebalance.
   - search(): Retrieve data with the given key.
   - inOrder(): Retrieve data in in-order traversal manner.
   - preOrder(): Retrieve data in pre-order traversal manner.
@@ -1558,6 +1558,6 @@ Some coding problems to practice & review for interviews
 
 ## **Binary Tree**
 
-[Java Implementation](BinaryTree/BinaryTree.java) of Balanced Binary Search Tree
+[Java Implementation](BinaryTree/BinaryTree.java) of AVL-Tree
 
 ---

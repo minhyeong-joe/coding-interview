@@ -5,6 +5,7 @@
 #include <vector>
 
 const int DEFAULT_CAPACITY = 10;
+const double THRESHOLD = 0.75f;
 
 template<class K, class V>
 class HashTable {
@@ -13,14 +14,13 @@ private:
         K _key;
         V _value;
     };
-    std::vector<Data> table[DEFAULT_CAPACITY];
+    std::vector<Data>* table;
     int _capacity;
     int _size;
     
     // helper methods
     int hash(const K& key) const;
     void expandTable();
-    void shrinkTable();
 public:
     HashTable();
     ~HashTable();

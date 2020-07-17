@@ -10,9 +10,15 @@ int main(int argc, char const *argv[])
     ht.insert(2, "B");
     ht.insert(11, "C");
     ht.insert(6, "D");
-    ht.insert(14, "E");
+    ht.insert(12, "E");
+    ht.print();
+    cout << endl;
     ht.insert(22, "F");
+    ht.print();
+    cout << endl;
     ht.insert(21, "G");
+    ht.insert(8, "H");
+    ht.print();
     try
     {
         ht.insert(11, "H");

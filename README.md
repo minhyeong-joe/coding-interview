@@ -116,6 +116,10 @@ Some coding problems to practice & review for interviews
   - remove(): Remove data and internally "heapify" to satisfy heap properties.
   - min()/max(): Return the root element.
 
+  [**C++ Header**](DataStructures/MinHeap.hpp)
+
+  [**C++ Implementation**](DataStructures/MinHeap.cpp)
+
 [Back to Top](#navigation)
 
 ---
@@ -245,7 +249,7 @@ Some coding problems to practice & review for interviews
 
 - ### Problem Statement
 
-      Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
+    Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
 
   The pass through the list is repeated until the list is sorted.
 
@@ -269,7 +273,7 @@ Some coding problems to practice & review for interviews
 
 - ### Problem Statement
 
-      Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.
+    Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.
 
   At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
 
@@ -281,9 +285,9 @@ Some coding problems to practice & review for interviews
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-        O(N^2).
+      O(N^2).
 
-        Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
+      Always N-1 iterations, and in each iteration, algorithm compares i-th element to all preceding elements
 
     to decide i-th element's new order. (More "shifts" required for worst case)
 
@@ -307,9 +311,9 @@ Some coding problems to practice & review for interviews
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
-        O(N log N).
+      O(N log N).
 
-        Similar to binary operations (divide-and-conquer), each split/merge divides the problem
+      Similar to binary operations (divide-and-conquer), each split/merge divides the problem
 
     into subproblems of half the size. It takes log N divisions and in each subproblem, N time to sort.
 

@@ -52,7 +52,7 @@ Some coding problems to practice & review for interviews
 - Binary Tree
   1. [MorseCodeLookup](#morse-code-lookup)
 - Number and Math
-  1. IsPowerOfTwo
+  1. [IsPowerOfTwo](#is-power-of-two)
   2. FindPrimeGivenUpperBound
   3. BinaryConversion
   4. SumOfDigits
@@ -1598,6 +1598,49 @@ Some coding problems to practice & review for interviews
     O(log N)
 
     because for each Morse character, only look at the half subtree.
+
+**[Back To Top](#navigation)**
+
+---
+
+## **Number and Math**
+
+---
+
+- ## is Power of Two
+
+- ### Problem Statement
+
+  Given a positive integer, determine if the input is a power of two, (ie. 1, 2, 4, 8, 16...)
+
+  and find the exponent x of 2^x without using built-in log function.
+
+  **Example:**
+  ```java
+  print(isPowerofTwo(16))
+  print(isPowerofTwo(20))
+  // should output:
+  // 4
+  // -1
+  ```
+
+- ### Solution
+
+  A number that is power of two can be represented with binary as `1` followed by 0 or more `0`s.
+
+  1 = 0b1, 2 = 0b10, 4 = 0b100...
+
+  So check if the binary representation matches this pattern, and if so number of `0`s would be the exponent.
+
+  - #### Path to the source codes that solve the problem
+
+    [isPowerOfTwo.py](Math/isPowerOfTwo.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N) in terms of N = length of binary representation
+
+    O(⌊log N⌋ + 1) in terms of N = input integer
 
 **[Back To Top](#navigation)**
 

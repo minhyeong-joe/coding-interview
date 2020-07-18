@@ -50,7 +50,7 @@ Some coding problems to practice & review for interviews
   3. [ShortestPath](#shortest-path)
   4. [EulerianPath](#eulerian-path)
 - Binary Tree
-  1. MorseCodeLookup
+  1. [MorseCodeLookup](#morse-code-lookup)
 - Number and Math
   1. IsPowerOfTwo
   2. FindPrimeGivenUpperBound
@@ -1559,5 +1559,46 @@ Some coding problems to practice & review for interviews
 ## **Binary Tree**
 
 [Java Implementation](BinaryTree/BinaryTree.java) of AVL-Tree
+
+---
+
+- ## Morse Code Lookup
+
+- ### Problem Statement
+
+  Morse Code table can be stored in the Binary Tree structure.
+
+  ![morse code](assets/morse_code.png)
+
+  Implement the above Morse Code Lookup Binary Tree,
+
+  and given a sequence of Morse codes delimited by a whitespace, convert it to sequence of English letters.
+
+  **Example:**
+  ```java
+  input = ".... . .-.. .-.. ---";
+  output = convert(input);
+  print(output);
+  // should output:
+  // HELLO
+  ```
+
+- ### Solution
+
+  Manually wire up and create the Morse code Binary Tree organization (as it is not based on comparsion as in BST),
+
+  Start from root, see a `dot` then traverse to left, see a `dash` then traverse to right, and when seeing a whitespace, append the letter in that node to the result string.
+
+  - #### Path to the source codes that solve the problem
+
+    [MorseCodeLookup.py](Graph/MorseCodeLookup.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(log N)
+
+    because for each Morse character, only look at the half subtree.
+
+**[Back To Top](#navigation)**
 
 ---

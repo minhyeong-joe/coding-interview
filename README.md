@@ -1591,7 +1591,7 @@ Some coding problems to practice & review for interviews
 
   - #### Path to the source codes that solve the problem
 
-    [MorseCodeLookup.py](Graph/MorseCodeLookup.py)
+    [MorseCodeLookup.py](BinaryTree/MorseCodeLookup.py)
 
   - #### If applicable, What is time complexity of the solution? (Big-O)
 

@@ -53,7 +53,7 @@ Some coding problems to practice & review for interviews
   1. [MorseCodeLookup](#morse-code-lookup)
 - Number and Math
   1. [IsPowerOfTwo](#is-power-of-two)
-  2. FindPrimeGivenUpperBound
+  2. [FindPrimeGivenUpperBound](#find-prime-given-upper-bound)
   3. BinaryConversion
   4. SumOfDigits
   5. PrimeFactorization
@@ -1641,6 +1641,44 @@ Some coding problems to practice & review for interviews
     O(N) in terms of N = length of binary representation
 
     O(⌊log N⌋ + 1) in terms of N = input integer
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Find Prime Given Upper Bound
+
+- ### Problem Statement
+
+  Given a positive integer upper bound, find all primes in range of 2 ~ upper bound (exclusive).
+
+  Prime is a number that is divisible by 1 and itself only.
+
+  **Example:**
+  ```java
+  primes = findPrime(20)
+  print(primes)
+  // should output:
+  // [2, 3, 5, 7, 11, 13, 17, 19]
+  ```
+
+- ### Solution
+
+  for each number from 2 to upper bound, determine if number is prime, and append to result array iff it is prime.
+
+  To determine prime: start array with `2`, and starting from next number, check if that number is divisible by any number in the array.
+
+  If it is divisible by any single number from the array, then it is not prime.
+
+  - #### Path to the source codes that solve the problem
+
+    [FindPrime.java](Math/FindPrime.java)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N^2)
+
+    N = upperbound
 
 **[Back To Top](#navigation)**
 

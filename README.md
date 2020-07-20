@@ -54,7 +54,7 @@ Some coding problems to practice & review for interviews
 - Number and Math
   1. [IsPowerOfTwo](#is-power-of-two)
   2. [FindPrimeGivenUpperBound](#find-prime-given-upper-bound)
-  3. BinaryConversion
+  3. [BinaryConversion](#binary-conversion)
   4. SumOfDigits
   5. PrimeFactorization
   6. SieveOfEratosthenes
@@ -1679,6 +1679,57 @@ Some coding problems to practice & review for interviews
     O(N^2)
 
     N = upperbound
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Binary Conversion
+
+- ### Problem Statement
+
+  Implement a method that takes in string of either binary or decimal representation,
+
+  and convert binary->decimal and decimal->binary.
+
+  Binary representation is followed by `0b`, and Decimal representation is followed by `0x`.
+
+  The domain is assumed to be positive integer for both representations.
+
+  **Example:**
+  ```java
+  // 'b' and 'd' are used as flags as binary and decimal, but can be arbitrary
+  binary = convert("0x5")
+  print(binary)
+  decimal = convert("0b0110")
+  print(decimal)
+  // should output:
+  // 0b101
+  // 0x6
+  ```
+
+- ### Solution
+
+  First check for `0x` or `0b` flags, if neither, then throw exception or return invalid flag.
+
+  For binary -> decimal: for each digit `n` at position `i` from right-end, add 2^i * n to the result sum.
+
+  For decimal -> binary: Refer to [isPowerofTwo](#is-power-of-two), keep dividing by two to generate each digit in binary representation.
+
+  - #### Path to the source codes that solve the problem
+
+    [binaryConversion.py](Math/binaryConversion.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(N) N = length of string representation
+
+  Assuming No left-padded zeros:
+
+  Binary -> Decimal: O(log_2 X), X = value in decimal integer
+
+  Decimal -> Binary: O(log_10 X), X = value in decimal integer
+
 
 **[Back To Top](#navigation)**
 

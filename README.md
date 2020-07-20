@@ -55,7 +55,7 @@ Some coding problems to practice & review for interviews
   1. [IsPowerOfTwo](#is-power-of-two)
   2. [FindPrimeGivenUpperBound](#find-prime-given-upper-bound)
   3. [BinaryConversion](#binary-conversion)
-  4. SumOfDigits
+  4. [SumOfDigits](#sum-of-digits)
   5. PrimeFactorization
   6. SieveOfEratosthenes
 
@@ -1729,6 +1729,53 @@ Some coding problems to practice & review for interviews
   Binary -> Decimal: O(log_2 X), X = value in decimal integer
 
   Decimal -> Binary: O(log_10 X), X = value in decimal integer
+
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Sum of Digits
+
+- ### Problem Statement
+
+  Given an integer, compute the sum of each digits without conversion to string representation.
+
+  **[Extension]**
+
+  Return a single digit sum, by repetively sum up the new sum's each digit until single digit is left.
+
+  **Example:**
+  ```java
+  sum = digitSum(12345)
+  print(sum)
+  // 1+2+3+4+5
+  // should output:
+  // 15
+  sum = singleDigitSum(12345)
+  print(sum)
+  // 1+2+3+4+5 = 15, 1+5 = 6
+  // should output:
+  // 6
+  ```
+
+- ### Solution
+
+  Keep dividing by 10 while number is greater than 0,
+
+  while doing so, keep accumulating the number modulo 10, that is the one'th digit in the number.
+
+  For extension, simply repeat digitSum as subroutine until sum is less than 10.
+
+  - #### Path to the source codes that solve the problem
+
+    [sumOfDigits.py](Math/sumOfDigits.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+  O(log_10 N)
+
+  Because the input number is divided by 10 for each computation.
 
 
 **[Back To Top](#navigation)**

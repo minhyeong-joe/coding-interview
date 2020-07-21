@@ -56,7 +56,7 @@ Some coding problems to practice & review for interviews
   2. [FindPrimeGivenUpperBound](#find-prime-given-upper-bound)
   3. [BinaryConversion](#binary-conversion)
   4. [SumOfDigits](#sum-of-digits)
-  5. PrimeFactorization
+  5. [PrimeFactorization](#prime-factorization)
   6. SieveOfEratosthenes
 
 # Problems
@@ -1777,6 +1777,42 @@ Some coding problems to practice & review for interviews
 
   Because the input number is divided by 10 for each computation.
 
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Prime Factorization
+
+- ### Problem Statement
+
+  Given a positive integer, find the prime factorization of it.
+
+   "Prime Factorization" is finding which prime numbers multiply together to make the original number.
+
+  **Example:**
+  ```java
+  pFactor = primeFactorize(54)
+  // should output:
+  // [2, 3, 3, 3]
+  ```
+
+- ### Solution
+
+  Start with 2, for each integer up to square root of input:
+  1. check if the number is prime
+  2. if prime, see if input number is divisible by that prime.
+  3. if divisible, add that prime as a factor, and "reduce" input number by dividing by that prime.
+
+  Continue until input number is "reduced" to 1, and return the prime factors.
+
+  - #### Path to the source codes that solve the problem
+
+    [primeFactorization.py](Math/primeFactorization.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(sqrt(N))
 
 **[Back To Top](#navigation)**
 

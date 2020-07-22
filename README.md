@@ -57,7 +57,7 @@ Some coding problems to practice & review for interviews
   3. [BinaryConversion](#binary-conversion)
   4. [SumOfDigits](#sum-of-digits)
   5. [PrimeFactorization](#prime-factorization)
-  6. SieveOfEratosthenes
+  6. [SieveOfEratosthenes](#sieve-of-eratosthenes)
 
 # Problems
 
@@ -1813,6 +1813,40 @@ Some coding problems to practice & review for interviews
   - #### If applicable, What is time complexity of the solution? (Big-O)
 
     O(sqrt(N))
+
+**[Back To Top](#navigation)**
+
+---
+
+- ## Sieve of Eratosthenes
+
+- ### Problem Statement
+
+  Using Sieve of Eratosthenes, find all primes numbers between 2 and the given upper bound. (Exclusive upperbound)
+
+  **Example:**
+  ```java
+  primes = findPrime(23)
+  // should output:
+  // [2, 3, 5, 7, 11, 13, 17, 19]
+  ```
+
+- ### Solution
+
+  General Sieve of Eratosthenes algorithm works like so:
+  1. Create a list of 2 ~ upperbound.
+  2. Starting from 2, mark off 2 and all its multiples from its square. (ie. when marking off 3's multiples, do not have to consider 3*2. Start marking off with 3*3 = 9)
+  3. Move to the next unmarked number and repeat
+
+  - #### Path to the source codes that solve the problem
+
+    [SieveOfEratosthenes.py](Math/SieveOfEratosthenes.py)
+
+  - #### If applicable, What is time complexity of the solution? (Big-O)
+
+    O(N log(log(N))).
+
+    It is known to be the most efficient way to find all primes up to N when N is smaller than 10 million.
 
 **[Back To Top](#navigation)**
 
